@@ -53,6 +53,50 @@ class User{
         header('Location: index.php');
         exit();
     }
+
+    public function updateLogin($Nlogin){
+        mysqli_set_charset($this->db,'utf8');
+        $login = $_SESSION['user']['login'];
+        $change_login = mysqli_query($this->db,"SELECT * FROM utilisateurs WHERE login = '$login' ");
+        $RowLogin = mysqli_num_rows($change_login);
+        if($RowLogin == 1){
+            $change_login_test = mysqli_query($this->db,"SELECT * FROM utilisateurs WHERE login = '$Nlogin' ");
+            $RowLoginTest = mysqli_num_rows($change_login_test);
+            if($RowLoginTest == 1){
+                echo 'Login déjà existant';
+            }
+            else{
+                $new_login = mysqli_query($this->db, "UPDATE utilisateurs SET login = '$Nlogin' WHERE login = '$login'");
+                session_destroy();
+                header('Location: index.php');
+                exit();
+            }
+        }
+        else{
+            echo '<p class="erreur">Veuillez vous déconnecter votre Login est inexistant</p>';
+        }
+    }
+
+    public function updatePassword($password,$Npassword,$CNpassword){
+        mysqli_set_charset($this->db,'utf8');
+        $login = $_SESSION['user']['login'];
+        $change_password = mysqli_query($this->db,"SELECT * FROM utilisateurs WHERE login = '$login' AND password = '$password'");
+        $RowPassword = mysqli_num_rows($change_password);
+        if($RowPassword == 1){
+            if($Npassword == $CNpassword){
+                $new_password = mysqli_query($this->db,"UPDATE utilisateurs SET password = '$Npassword' WHERE login = '$login'");
+                session_destroy();
+                header('Location: index.php');
+                exit();
+            }
+            else{
+                echo '<p class="erreur">Vos nouveau mots de passe ne correspondent pas</p>';
+            }
+        }
+        else{
+            echo '<p class="erreur">Votre ancien mots de passe est incorrect</p>';
+        }
+    }
 }
 
 
