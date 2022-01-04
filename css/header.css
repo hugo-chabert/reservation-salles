@@ -10,7 +10,7 @@ html,body,main{
 
 .header{
     background-color: var(--Grey-);
-    font-family: LittleComet;
+    font-family: LemonMilk;
 }
 
 .containerHeader{
@@ -49,7 +49,7 @@ html,body,main{
     cursor: pointer;
     color: var(--Black-);
     font-size: 100%;
-    font-family: LittleComet;
+    font-family: LemonMilk;
 }
 
 .deco2:hover{
