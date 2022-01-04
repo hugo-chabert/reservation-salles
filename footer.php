@@ -3,7 +3,7 @@
     <div class="footer">
         <div class="footer1">
         Accueil<a href="index.php"><img class="socialMedia" alt="Accueil" src="https://cdn-icons-png.flaticon.com/512/1239/1239292.png"></a>
-        Livre d'or<a href="livre-or.php"><img class="socialMedia" alt="Livre d'or" src="http://cdn.onlinewebfonts.com/svg/img_351420.png"></a>
+        Planning<a href="planning.php"><img class="socialMedia" alt="Planning" src="http://cdn.onlinewebfonts.com/svg/img_351420.png"></a>
         <?php if(!isset($_SESSION['user'])){ echo 'Connexion<a href="connexion.php"><img class="socialMedia" alt="Connexion" src="http://cdn.onlinewebfonts.com/svg/img_201469.png"></a>';} ?>
         <?php if(!isset($_SESSION['user'])){ echo 'Inscription<a href="inscription.php"><img class="socialMedia" alt="Inscription" src="https://www.vbvb.fr/wp-content/uploads/2016/04/icone_sinscrire.png"></a>';} ?>
         <?php if(isset($_SESSION['user'])){ echo 'Profil<a href="profil.php"><img class="socialMedia" alt="Profil" src="http://cdn.onlinewebfonts.com/svg/img_311846.png"></a>';} ?>

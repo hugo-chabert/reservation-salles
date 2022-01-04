@@ -1,7 +1,6 @@
 <?php
 session_start();
 require ('fonctions.php');
-isntConnected();
 ?>
 
 <!DOCTYPE html>
@@ -17,11 +16,18 @@ isntConnected();
     <form action="" method="post">
         <input type="text" name="login" placeholder="Login"/>
         <input type="password" name="password" placeholder="Mot de passe"/>
-        <button>Connexion</button>
+        <button type="submit" name="connexion">Connexion</button>
         <p class="message">Vous n'avez pas de compte? <a class="aa" href="inscription.php">Creez un compte</a></p>
     </form>
-    <?php connect_user()?>
     </main>
     <?php require ('footer.php');?>
 </body>
 </html>
+<?php
+if(isset($_POST['connexion'])){
+    $User->connect($_POST['login'],$_POST['password']);
+}
+if(isset($_SESSION['user']['login'])){
+    $User->isntConnected();
+}
+?>

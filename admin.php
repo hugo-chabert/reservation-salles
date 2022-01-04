@@ -7,7 +7,7 @@ require ('fonctions.php');
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>NO-TITLE</title>
+    <title>Admin</title>
 </head>
 <body>
     <?php require ('header.php');?>
