@@ -15,13 +15,7 @@ require ('fonctions.php');
         <form action="" method="post">
             <input type="text" name="title" placeholder="Titre"/>
             <input type="text" name="desc" placeholder="Description"/>
-            <select name="jours" size="1">
-                <option>Lundi
-                <option>Mardi
-                <option>Mercredi
-                <option>Jeudi
-                <option>Vendredi
-            </select>
+            <input type="date" name="datetime"/>
             <select name="horaires" size="1">
                 <option value="8">8h - 9h
                 <option value="9">9h - 10h
@@ -37,14 +31,19 @@ require ('fonctions.php');
             </select>
             <button type="submit" name="reserver">Reserver</button>
         </form>
+        <?php
+            if(isset($_POST['reserver']) && isset($_POST['title']) && isset($_POST['desc'])){
+                $datetime = new DateTime($_POST['datetime']);
+                $datetime->setTime($_POST['horaires'],0);
+                $datetimeEnd = new DateTime($_POST['datetime']);
+                $datetimeEnd->setTime($_POST['horaires'],0);
+                $datetimeEnd -> add(new DateInterval('P0Y0M0DT1H0M0S'));
+                $datetime = $datetime->format('Y-m-d H:i');
+                $datetimeEnd = $datetimeEnd->format('Y-m-d H:i');
+                $Reservation->create($_POST['title'], $_POST['desc'], $datetime, $datetimeEnd, $_SESSION['user']['id']);
+            }
+        ?>
     </main>
     <?php require ('footer.php');?>
 </body>
 </html>
-<?php
-if(isset($_POST['reserver'])){
-    $Reservation->create($_POST['title'],$_POST['desc'],$_POST['jours'],$_POST['horaires']);
-    echo $_POST['jours'];
-}
-
-?>
