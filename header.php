@@ -8,6 +8,7 @@ include ('classes.php');
             <div class="links">
                 <a href="index.php" class="linkHeader">ACCUEIL</a>
                 <a href="planning.php" class="linkHeader">PLANNING</a>
+                <a href="reservation-form.php" class="linkHeader">RESERVATION</a>
                 <?php if(!isset($_SESSION['user'])){echo '<a href="inscription.php" class="linkHeader">INSCRIPTION</a>';} ?>
                 <?php if(!isset($_SESSION['user'])){echo '<a href="connexion.php" class="linkHeader">CONNEXION</a>';} ?>
                 <?php if(isset($_SESSION['user'])){echo '<a href="profil.php" class="linkHeader">PROFIL</a>';} ?>

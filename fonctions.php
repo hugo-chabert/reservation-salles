@@ -6,4 +6,5 @@ function connect_database(){
     return $db;
 }
 
+
 ?>

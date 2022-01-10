@@ -99,6 +99,20 @@ class User{
     }
 }
 
+class Reservation{
+    public $db;
+
+    public function __construct(){
+        $this->db = mysqli_connect('localhost', 'root', 'root', 'reservationsalles');
+    }
+
+    public function create(){
+        mysqli_set_charset($this->db,'utf8');
+    }
+}
+
 
 $User = new User();
+
+$Reservation = new Reservation();
 ?>
