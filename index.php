@@ -12,7 +12,7 @@ require ('fonctions.php');
 <body>
     <?php require ('header.php');?>
     <main>
-    <?php var_dump($_SESSION);?>
+
     </main>
     <?php require ('footer.php');?>
 </body>

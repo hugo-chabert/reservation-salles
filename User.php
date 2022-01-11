@@ -1,4 +1,5 @@
 <?php
+
 class User{
     public $db;
 
@@ -97,46 +98,22 @@ class User{
             echo '<p class="erreur">Votre ancien mots de passe est incorrect</p>';
         }
     }
-}
 
-class Reservation{
-    public $db;
-
-    public function __construct(){
-        $this->db = mysqli_connect('localhost', 'root', 'root', 'reservationsalles');
-    }
-
-    public function create($title, $desc, $datetime, $datetimeEnd, $id_user){
+    public function deleteUserAsAdmin($id){
         mysqli_set_charset($this->db,'utf8');
-        $checkDatetime = mysqli_query($this->db, "SELECT * FROM reservations WHERE debut = '$datetime'");
-        $RowReserv = mysqli_num_rows($checkDatetime);
-        if($RowReserv == 1){
-            echo "<p class='erreur'>Cette horaire est deja reservée !</p>";
-        }
-        else{
-            $CreateReservation = mysqli_query($this->db, "INSERT INTO reservations (titre, description, debut, fin, id_utilisateur) VALUES ('$title', '$desc', '$datetime', '$datetimeEnd', '$id_user')");
-            header('Location: planning.php');
-            exit();
-        }
-    }
-
-    public function delete($id){
-        mysqli_set_charset($this->db,'utf8');
-        $checkIfExist = mysqli_query($this->db, "SELECT * FROM reservation WHERE id = '$id'");
-        $rowCheckId = mysqli_num_rows($checkIfExist);
-        if($rowCheckId == 1){
-            $deleteReserv = mysqli_query($this->db, "DELETE FROM reservation WHERE id = '$id'");
+        $userExist = mysqli_query($this->db, "SELECT * FROM utilisateurs WHERE id = '$id'");
+        $rowDelUser = mysqli_num_rows($userExist);
+        if($rowDelUser == 1){
+            $deleteUser= mysqli_query($this->db, "DELETE FROM utilisateurs WHERE id = '$id'");
             header('Location: admin.php');
             exit();
         }
         else{
-            echo "<p class='erreur'>Cette reservation n'existe pas !</p>";
+            '<p class="erreur">Cet utilisateur est inexistant !</p>';
         }
     }
 }
 
-
 $User = new User();
 
-$Reservation = new Reservation();
 ?>

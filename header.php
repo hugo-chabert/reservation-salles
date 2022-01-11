@@ -1,5 +1,6 @@
 <?php
-include ('classes.php');
+include ('User.php');
+include ('ReservationClass.php');
 ?>
 <link href="css/header.css" rel="stylesheet">
 <header>
