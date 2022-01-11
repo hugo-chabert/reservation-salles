@@ -7,7 +7,7 @@ require ('fonctions.php');
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>NO-TITLE</title>
+    <title>Reservation Salle</title>
 </head>
 <body>
     <?php require ('header.php');?>
