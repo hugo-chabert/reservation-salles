@@ -4,21 +4,34 @@ include ('ReservationClass.php');
 ?>
 <link href="css/header.css" rel="stylesheet">
 <header>
-    <div class="header">
-            <div class="containerHeader">RESERVATION SALLES</div>
-            <div class="links">
-                <a href="index.php" class="linkHeader">ACCUEIL</a>
-                <a href="planning.php" class="linkHeader">PLANNING</a>
-                <a href="reservation-form.php" class="linkHeader">RESERVATION</a>
-                <?php if(!isset($_SESSION['user'])){echo '<a href="inscription.php" class="linkHeader">INSCRIPTION</a>';} ?>
-                <?php if(!isset($_SESSION['user'])){echo '<a href="connexion.php" class="linkHeader">CONNEXION</a>';} ?>
-                <?php if(isset($_SESSION['user'])){echo '<a href="profil.php" class="linkHeader">PROFIL</a>';} ?>
-                <?php if(isset($_SESSION['user'])){if($_SESSION['user']['id_droits'] == '13'){echo '<a href="admin.php" class="linkHeader">ADMIN</a>';}} ?>
-                <?php if(isset($_SESSION['user'])){echo '<form action="" method = "POST" class="decoButton">
-                                                            <button class = "deco2" type = "submit" name = "deconnexion" value ="Deconnexion">DECONNEXION</button>
-                                                        </form>';} ?>
-            </div>
+    <nav>
+        <div class="logo">
+            <a href="index.php"><img src="img/logo.png" alt="logo" width="60px"></a>
         </div>
+        <div class = "menu">
+            <ul>
+                <li> <a href="index.php">Home</a> </li>
+                <li> <a href="planning.php">Planning</a> </li>
+                <?php if(isset($_SESSION['user'])){echo'<li> <a href="reservation-form.php">Reservations</a> </li>';}?>
+                <li> <a href="profil.php">Profil</a> </li>
+            </ul>
+            <?php
+            if(!isset($_SESSION['user'])){
+                echo '
+                <ul>
+                    <li> <a href="connexion.php">Connexion</a> </li>
+                    <li> <a href="inscription.php">Inscription</a> </li>
+                </ul>';
+            }
+            else{
+                echo '
+                <form action="" method="post">
+                    <button class = "deco" type = "submit" name = "deconnexion" value ="Deconnexion">Déconnexion</buttton>
+                </form>';
+            }
+            ?>
+        </div>
+    </nav>
 </header>
 <?php
 if(isset($_POST['deconnexion'])){

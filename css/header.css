@@ -1,72 +1,109 @@
 @import url(root.css);
 @import url(font.css);
 
-html,body,main{
-    padding: 0;
+body{
     margin: 0;
-    scroll-behavior: smooth;
-    position: relative;
+    padding: 0;
+    width: 100%;
 }
 
-.header{
-    background-color: var(--Grey-);
-    font-family: LemonMilk;
+header{
+    width: 100%;    
 }
-
-.containerHeader{
-    display: flex;
-    justify-content: center;
-    font-size: 400%;
-    color: var(--Black-);
-    padding-top: 1%;
-}
-
-.links{
+nav{
+    width:100%;
+    background-color: var(--Background-);
     display: flex;
     flex-direction: row;
-    font-size: 150%;
-    align-items: center;
-    justify-content: space-around;
+}
+nav ul {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    width: 40%;
 }
 
-.linkHeader{
+nav ul li{
+    display: inline-block;
+    padding: 4%;
+    font-size: 1.2em;
+    font-family: Title;
+    transition: all .2s ease-in-out;
+}
+nav ul li a{
     text-decoration: none;
-    color: var(--Black-);
-    margin: 1%;
-}
-
-.linkHeader:hover{
     color: var(--White-);
-    animation-name: pulse;
-    animation-duration: 0.5s;
-    animation-fill-mode: both;
+    transition: all .2s ease-in-out;
+}
+.menu{
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.menu form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo{
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav ul li :hover{
+    color: var(--Hover-);
+}
+.deconnexion {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+        -webkit-tap-highlight-color: transparent;
 }
 
-.deco2{
-    background-color: transparent;
-    border: 0;
-    outline: 0;
+.menu button {
+    border-radius: 50px;
+    height: 45px;
+    width: 150px;
     cursor: pointer;
-    color: var(--Black-);
-    font-size: 100%;
-    font-family: LemonMilk;
+    border: none;
+    font-family: 'Comfortaa', cursive;
+    color: rgba(255,255,255,0.5);
+    font-size: 20px;
+    box-shadow: inset 0px 3px 5px rgba(255,255,255,0.5), 0px 0px 10px rgba(0,0,0,0.15);
+    background: linear-gradient(45deg, rgba(2,0,36,0) 5%, rgba(255,255,255,.5) 6%, rgba(255,255,255,0) 9%, rgba(255,255,255,.5) 10%, rgba(255,255,255,0) 17%, rgba(255,255,255,.5) 19%, rgba(255,255,255,0) 21%);
+    background-size: 150%;
+    background-position: right;
+    transition: 1s;
+    margin-right: 50px;
 }
 
-.deco2:hover{
-    color: var(--Red-);
-    animation-name: pulse;
-    animation-duration: 0.5s;
-    animation-fill-mode: both;
+button:hover {
+    background-position: left;
+    color: white;
+    box-shadow: inset 0px 3px 5px rgba(255,255,255,1), 0px 0px 10px rgba(0,0,0,0.25);
 }
 
-@keyframes pulse {
-    0% {
-        transform: scale3d(1, 1, 1);
-    }
-    50% {
-        transform: scale3d(1.2, 1.2, 1.2);
-    }
-    100% {
-        transform: scale3d(1.1, 1.1, 1.1);
-    }
+button:focus {
+    outline: none;
+}
+
+.facebook:hover{
+    background-color:var(--Color1-) ;
+}
+.twitter:hover{
+    background-color:var(--Color2-) ;
+}
+.instagram:hover{
+    background-color:var(--Color3-) ;
+}
+.github:hover{
+    background-color:var(--Color4-) ;
+}
+footer div div ul li a:hover{
+    color: var(--Hover-);
 }
