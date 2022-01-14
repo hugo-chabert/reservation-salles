@@ -1,6 +1,7 @@
 <?php
 session_start();
 require ('fonctions.php');
+ob_start();
 ?>
 
 <!DOCTYPE html>
@@ -47,3 +48,4 @@ require ('fonctions.php');
     <?php require ('footer.php');?>
 </body>
 </html>
+<?php ob_end_flush(); ?>

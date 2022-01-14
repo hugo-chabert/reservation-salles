@@ -1,32 +1,49 @@
 <?php
 
-class ReservationClass{
-    public $db;
+include 'database.php';
 
-    public function __construct(){
-        $this->db = mysqli_connect('localhost', 'root', 'root', 'reservationsalles');
+class ReservationClass{
+    public $pdo;
+
+    public function __construct($pdo){
+        $this->db = $pdo;
     }
 
     public function create($title, $desc, $datetime, $datetimeEnd, $id_user){
-        mysqli_set_charset($this->db,'utf8');
-        $checkDatetime = mysqli_query($this->db, "SELECT * FROM reservations WHERE debut = '$datetime'");
-        $RowReserv = mysqli_num_rows($checkDatetime);
-        if($RowReserv == 1){
+        $req = "SELECT * FROM reservations WHERE debut = :datetime";
+        $stmt = $this->db->prepare($req);
+        $stmt->execute(array(
+            ":datetime" => $datetime
+        ));
+        if($stmt->rowCount() == 1){
             echo "<p class='erreur'>Cette horaire est deja reservée !</p>";
         }
         else{
-            $CreateReservation = mysqli_query($this->db, "INSERT INTO reservations (titre, description, debut, fin, id_utilisateur) VALUES ('$title', '$desc', '$datetime', '$datetimeEnd', '$id_user')");
+            $req2 = "INSERT INTO reservations (titre, description, debut, fin, id_utilisateur) VALUES (:title, :desc, :datetime, :datetimeEnd, :id_user)";
+            $stmt2 = $this->db->prepare($req2);
+            $stmt2->execute(array(
+                ":title" => $title,
+                ":desc" => $desc,
+                ":datetime" => $datetime,
+                ":datetimeEnd" => $datetimeEnd,
+                ":id_user" => $id_user
+            ));
             header('Location: planning.php');
             exit();
         }
     }
 
     public function delete($id){
-        mysqli_set_charset($this->db,'utf8');
-        $checkIfExist = mysqli_query($this->db, "SELECT * FROM reservation WHERE id = '$id'");
-        $rowCheckId = mysqli_num_rows($checkIfExist);
-        if($rowCheckId == 1){
-            $deleteReserv = mysqli_query($this->db, "DELETE FROM reservation WHERE id = '$id'");
+        $req = "SELECT * FROM reservation WHERE id = :id";
+        $stmt->execute(array(
+            ":id" => $id
+        ));
+        if($stmt->rowCount() == 1){
+            $req2 = "DELETE FROM reservation WHERE id = :id";
+            $stmt2 = $this->db->prepare($req2);
+                $stmt2->execute(array(
+                    ":id" => $id
+                ));
             header('Location: admin.php');
             exit();
         }
@@ -36,6 +53,6 @@ class ReservationClass{
     }
 }
 
-$Reservation = new ReservationClass();
+$Reservation = new ReservationClass($pdo);
 
 ?>
