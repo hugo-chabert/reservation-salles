@@ -1,14 +1,15 @@
 <?php
 
-class User{
-    public $db;
+include 'database.php';
 
-    public function __construct(){
-        $this->db = mysqli_connect('localhost', 'root', 'root', 'reservationsalles');
+class User{
+    protected $pdo;
+
+    public function __construct($pdo){
+        $this->db = $pdo;
     }
 
     public function register($login, $password, $Cpassword){
-        mysqli_set_charset($this->db,'utf8');
         $User_Exist = mysqli_query($this->db, "SELECT * FROM utilisateurs WHERE login = '".$login."'");
         $Row_Exist = mysqli_num_rows($User_Exist);
         if($Row_Exist == 1){
@@ -28,12 +29,15 @@ class User{
     }
 
     public function connect($login, $password){
-        mysqli_set_charset($this->db,'utf8');
-        $recupUserConnect = mysqli_query($this->db, "SELECT * FROM utilisateurs WHERE login = '".$login."' AND password ='".$password."'");
-        $row = mysqli_num_rows($recupUserConnect);
-        $fetch = mysqli_fetch_assoc($recupUserConnect);
-        if($row == 1){
-            $_SESSION['user'] = $fetch;
+        $req = "SELECT * FROM utilisateurs WHERE login = :login AND password = :password";
+        $stmt = $this->db->prepare($req);
+        $stmt->execute(array(
+            ":login" => $login,
+            ":password" => $password,
+        ));
+        $resultat = $stmt->fetch(PDO::FETCH_ASSOC);
+        if($stmt->rowCount() == 1){
+            $_SESSION['user'] = $resultat;
         }
         header('Location: index.php');
         exit();
@@ -56,7 +60,6 @@ class User{
     }
 
     public function updateLogin($Nlogin){
-        mysqli_set_charset($this->db,'utf8');
         $login = $_SESSION['user']['login'];
         $change_login = mysqli_query($this->db,"SELECT * FROM utilisateurs WHERE login = '$login' ");
         $RowLogin = mysqli_num_rows($change_login);
@@ -79,7 +82,6 @@ class User{
     }
 
     public function updatePassword($password,$Npassword,$CNpassword){
-        mysqli_set_charset($this->db,'utf8');
         $login = $_SESSION['user']['login'];
         $change_password = mysqli_query($this->db,"SELECT * FROM utilisateurs WHERE login = '$login' AND password = '$password'");
         $RowPassword = mysqli_num_rows($change_password);
@@ -100,7 +102,6 @@ class User{
     }
 
     public function deleteUserAsAdmin($id){
-        mysqli_set_charset($this->db,'utf8');
         $userExist = mysqli_query($this->db, "SELECT * FROM utilisateurs WHERE id = '$id'");
         $rowDelUser = mysqli_num_rows($userExist);
         if($rowDelUser == 1){
@@ -114,6 +115,6 @@ class User{
     }
 }
 
-$User = new User();
+$User = new User($pdo);
 
 ?>
