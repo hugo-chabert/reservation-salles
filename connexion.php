@@ -1,5 +1,6 @@
 <?php
 session_start();
+ob_start();
 require ('fonctions.php');
 ?>
 
@@ -30,4 +31,6 @@ if(isset($_POST['connexion'])){
 if(isset($_SESSION['user']['login'])){
     $User->isntConnected();
 }
+
+ob_end_flush();
 ?>
