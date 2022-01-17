@@ -151,6 +151,29 @@ class User{
             '<p class="erreur">Cet utilisateur est inexistant !</p>';
         }
     }
+
+    public function display_all_users(){
+        $req = "SELECT * FROM utilisateurs";
+        $resultat = $this->db->query($req);
+        ?>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Login</th>
+                    </tr>
+                </thead>
+                <tbody>
+        <?php
+        foreach($resultat AS $fu){
+            echo '<tr><td>'.$fu['id'].'</td>';
+            echo '<td>'.$fu['login'].'</td></tr>';
+        }
+        ?>
+                </tbody>
+            </table>
+        <?php
+    }
 }
 
 $User = new User($pdo);
