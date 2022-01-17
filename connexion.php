@@ -7,18 +7,21 @@ require ('fonctions.php');
 <html>
 <head>
     <meta charset="UTF-8">
-    <link href="css/inscription.css" rel="stylesheet">
+    <link href="css/form.css" rel="stylesheet">
     <title>Connexion</title>
 </head>
 <body>
     <?php require ('header.php');?>
     <main>
-    <form action="" method="post">
-        <input type="text" name="login" placeholder="Login"/>
-        <input type="password" name="password" placeholder="Mot de passe"/>
-        <button type="submit" name="connexion">Connexion</button>
-        <p class="message">Vous n'avez pas de compte? <a class="aa" href="inscription.php">Creez un compte</a></p>
-    </form>
+        <div class="container">
+            <form action="" method="post">
+                <p>Connectez vous dès maintenant !! &#128513;</p>
+                <input class ="input-form"type="text" name="login" placeholder="Login"/>
+                <input class ="input-form"type="password" name="password" placeholder="Mot de passe"/>
+                <button class ='button' type="submit" name="connexion">Connexion</button>
+                <p class="message">Vous n'avez pas de compte? <br><a class="aa" href="inscription.php">Creez un compte</a></p>
+            </form>
+        </div>
     </main>
     <?php require ('footer.php');?>
 </body>
