@@ -6,10 +6,10 @@
                 <h2>About</h2>
                 <p>
                     Une envie d'un endroit où faire la fête, où travailler dans le calme, où organiser vos réunion ?
-                    Eb bien vous topmber à pic !! Venez réserver une salle sur notre site pour profiter d'un espace
+                    Eh bien vous tomber à pic !! Venez réserver une salle sur notre site pour profiter d'un espace
                     calme et conviviale pour votre plus grand bonheur. Pour réserver rien de plus simple connectez vous pour
-                    réserver une salle, vous n,'avez pas de compte ? ce n'est pas grave inscrivez vous et par la suite vous pourrez
-                    reserver votre salle. Choisissez la date, l'heure, donner un titre et une description à votre créneau et une 
+                    réserver une salle, vous n'avez pas de compte ? Ce n'est pas grave inscrivez vous et par la suite vous pourrez
+                    reserver votre salle. Choisissez la date, l'heure, donner un titre et une description à votre créneau et une
                     salle vous sera decerné.
                 </p>
             </section>

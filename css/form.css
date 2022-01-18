@@ -33,6 +33,7 @@ form{
     border: none;
     background-color: var(--Background3-);
     color: var(--White-);
+    font-size: clamp(1rem, 1.2rem, 1.5rem);
 }
 
 form p{
