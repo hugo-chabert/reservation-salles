@@ -39,9 +39,11 @@ ob_start();
                 $datetimeEnd = new DateTime($_POST['datetime']);
                 $datetimeEnd->setTime($_POST['horaires'],0);
                 $datetimeEnd -> add(new DateInterval('P0Y0M0DT1H0M0S'));
+                $semaine= new DateTime($_POST['datetime']);
                 $datetime = $datetime->format('Y-m-d H:i');
                 $datetimeEnd = $datetimeEnd->format('Y-m-d H:i');
-                $Reservation->create($_POST['title'], $_POST['desc'], $datetime, $datetimeEnd, $_SESSION['user']['id']);
+                $semaine = $semaine->format('W');
+                $Reservation->create($_POST['title'], $_POST['desc'], $datetime, $datetimeEnd, $_SESSION['user']['id'], $semaine);
             }
         ?>
     </main>

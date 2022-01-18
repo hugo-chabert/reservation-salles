@@ -1,6 +1,7 @@
 <?php
 include ('User.php');
 include ('ReservationClass.php');
+date_default_timezone_set('Europe/Paris');
 ?>
 <link href="css/header.css" rel="stylesheet">
 <header>
@@ -11,7 +12,7 @@ include ('ReservationClass.php');
         <div class = "menu">
             <ul>
                 <li> <a href="index.php">Home</a> </li>
-                <li> <a href="planning.php">Planning</a> </li>
+                <?php echo ("<li> <a href='planning.php?=".date('W')."'>Planning</a> </li>");?>
                 <?php if(isset($_SESSION['user'])){echo'<li> <a href="reservation-form.php">Reservations</a> </li>';}?>
                 <li> <a href="profil.php">Profil</a> </li>
             </ul>

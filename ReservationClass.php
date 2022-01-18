@@ -9,7 +9,7 @@ class ReservationClass{
         $this->db = $pdo;
     }
 
-    public function create($title, $desc, $datetime, $datetimeEnd, $id_user){
+    public function create($title, $desc, $datetime, $datetimeEnd, $id_user, $semaine){
         $req = "SELECT * FROM reservations WHERE debut = :datetime";
         $stmt = $this->db->prepare($req);
         $stmt->execute(array(
@@ -19,14 +19,15 @@ class ReservationClass{
             echo "<p class='erreur'>Cette horaire est deja reservée !</p>";
         }
         else{
-            $req2 = "INSERT INTO reservations (titre, description, debut, fin, id_utilisateur) VALUES (:title, :desc, :datetime, :datetimeEnd, :id_user)";
+            $req2 = "INSERT INTO reservations (titre, description, debut, fin, id_utilisateur, semaine) VALUES (:title, :desc, :datetime, :datetimeEnd, :id_user, :semaine)";
             $stmt2 = $this->db->prepare($req2);
             $stmt2->execute(array(
                 ":title" => $title,
                 ":desc" => $desc,
                 ":datetime" => $datetime,
                 ":datetimeEnd" => $datetimeEnd,
-                ":id_user" => $id_user
+                ":id_user" => $id_user,
+                ":semaine" => $semaine
             ));
             header('Location: planning.php');
             exit();
