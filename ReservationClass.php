@@ -97,6 +97,25 @@ class ReservationClass{
             </table>
         <?php
     }
+
+    public function planning($semaine){
+        $req = "SELECT * FROM reservations WHERE semaine = :semaine";
+        $stmt = $this->db->prepare($req);
+        $stmt->execute(array(
+            ":semaine" => $semaine
+        ));
+        while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+            $test =  new DateTime($row['debut']);
+            $test2 = new DateTime('2022-01-20 11:11:10');
+            echo date_format($test, 'W');
+            if($test > $test2){
+                echo 'OUI';
+            }
+            else{
+                echo 'NON';
+            }
+        }
+    }
 }
 $Reservation = new ReservationClass($pdo);
 
