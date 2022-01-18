@@ -1,6 +1,6 @@
 <link href="css/footer.css" rel="stylesheet">
 <footer>
-    <div class="container">
+    <div class="container-footer">
         <div class="part-up">
             <section class="about">
                 <h2>About</h2>
