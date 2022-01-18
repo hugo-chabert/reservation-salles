@@ -34,7 +34,7 @@ class User_model
         return $estModifier;
     }
 
-    public static function info_user_id($id)
+    public function info_user_id($id)
     {
         //requete sql
         $req = "SELECT * FROM utilisateurs WHERE id_utilisateur = :id";
