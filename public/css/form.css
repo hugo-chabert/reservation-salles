@@ -1,51 +1,55 @@
-html,body,main{
+html,
+body,
+main {
     width: 100%;
     height: 100%;
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
     scroll-behavior: smooth;
 }
 
-.container{
+.container {
     width: 100%;
     height: 100%;
+    background-color: cornflowerblue;
     display: flex;
     justify-content: center;
     align-items: center;
     background-image: linear-gradient(to bottom right, var(--Background2-), var(--Background-))
 }
 
-form{
+form {
     padding: 2%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    width: 20%;
+    min-width: 40vw;
     height: 50%;
     background-color: var(--Background2-);
-    box-shadow: 0 8px 8px  var(--White-);
+    box-shadow: 0 8px 8px var(--White-);
 }
 
-.input-form{
-    width: 70%;
-    height: 10%;
+.input-form {
     border: none;
+    width: 70%;
     background-color: var(--Background3-);
     color: var(--White-);
+    font-size: clamp(1rem, 1.2rem, 1.5rem);
 }
 
-form p{
+form p {
     text-align: center;
-    font-size: 1.5em;
+    font-size: clamp(0.7rem, 1.2rem, 1.5rem);
     color: var(--White-);
 }
 
-form a{
+form a {
     color: var(--White-);
     transition: all .2s ease-in-out;
 }
-form a:hover{
+
+form a:hover {
     color: var(--Hover-);
 }
 
@@ -53,24 +57,24 @@ form a:hover{
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-        -webkit-tap-highlight-color: transparent;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .button {
     width: auto;
-    height: 50px;
+    height: 3.125rem;
     cursor: pointer;
     border: none;
     font-family: 'Comfortaa', cursive;
-    color: rgba(255,255,255,0.5);
-    font-size: 20px;
-    border-radius: 4px;
-    box-shadow: inset 0px 3px 5px rgba(255,255,255,0.5), 0px 0px 10px rgba(0,0,0,0.15);
-    background: rgb(2,0,36);
-    background: linear-gradient(45deg, rgba(2,0,36,0) 5%, rgba(255,255,255,.5) 6%, rgba(255,255,255,0) 9%, rgba(255,255,255,.5) 10%, rgba(255,255,255,0) 17%, rgba(255,255,255,.5) 19%, rgba(255,255,255,0) 21%);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.25rem;
+    border-radius: .25rem;
+    box-shadow: inset 0px 3px 5px rgba(255, 255, 255, 0.5), 0px 0px 10px rgba(0, 0, 0, 0.15);
+    background: rgb(2, 0, 36);
+    background: linear-gradient(45deg, rgba(2, 0, 36, 0) 5%, rgba(255, 255, 255, .5) 6%, rgba(255, 255, 255, 0) 9%, rgba(255, 255, 255, .5) 10%, rgba(255, 255, 255, 0) 17%, rgba(255, 255, 255, .5) 19%, rgba(255, 255, 255, 0) 21%);
     background-size: 150%;
     background-position: right;
     transition: 1s;
@@ -79,10 +83,9 @@ form a:hover{
 button:hover {
     background-position: left;
     color: white;
-    box-shadow: inset 0px 3px 5px rgba(255,255,255,1), 0px 0px 10px rgba(0,0,0,0.25);
+    box-shadow: inset 0px 3px 5px rgba(255, 255, 255, 1), 0px 0px 10px rgba(0, 0, 0, 0.25);
 }
 
 button:focus {
     outline: none;
 }
-
