@@ -1,12 +1,21 @@
+
 <?php
-$host = 'localhost';
-$db   = 'reservationsalles';
-$user = 'root';
-$pass = 'root';
-$charset = 'utf8';
 
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-$opt = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
-$pdo = new PDO($dsn, $user, $pass, $opt);
+class Database
+{
+    public static function connect_db(): PDO
+    {
+        try {
+            $bdd = new PDO("mysql:host=localhost;dbname=reservationsalles;charset=utf8", "root", "root");
+            $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            if (!$bdd) {
+                die("Connexion a la bdd impossible");
+            }
+            return $bdd;
+        } catch (PDOException $e) {
 
-?>
+            echo 'echec : ' . $e->getMessage();
+            var_dump($e);
+        }
+    }
+}
