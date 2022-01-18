@@ -15,6 +15,7 @@ include ('ReservationClass.php');
                 <?php if(isset($_SESSION['user'])){echo'<li class="li-menu-1"> <a href="reservation-form.php">Reservations</a> </li>';}?>
                 <?php if(isset($_SESSION['user'])){echo'<li class="li-menu-1"> <a href="my-res.php">Mes Reservations</a> </li>';}?>
                 <li class='li-menu-1'> <a href="profil.php">Profil</a> </li>
+                <?php if(!empty($_SESSION['user'])){if($_SESSION['user']['id_droits'] == '13'){echo ('<li class="li-menu-1"><a href="admin.php" class="linkHeader">Admin</a></li>');}} ?>
             </ul>
             <?php
             if(!isset($_SESSION['user'])){

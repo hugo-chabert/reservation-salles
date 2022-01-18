@@ -18,8 +18,7 @@
                 <ul>
                     <li> <a href="index.php"> Accueil </a></li>
                     <li> <a href="planning.php"> Planning </a></li>
-                    <li> <a href="#link-foot"> Drill </a></li>
-                    <li> <a href="#link-foot"> RnB </a></li>
+                    <li> <a href="my-res.php"> Mes reservations </a></li>
                 </ul>
             </section>
             <section class="link">
