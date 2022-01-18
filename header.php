@@ -9,7 +9,7 @@ include ('ReservationClass.php');
             <a href="index.php"><img src="img/logo.png" alt="logo" width="60px"></a>
         </div>
         <div class = "menu">
-            <ul>
+            <ul class ='ul-menu-1'>
                 <li> <a href="index.php">Home</a> </li>
                 <li> <a href="planning.php">Planning</a> </li>
                 <?php if(isset($_SESSION['user'])){echo'<li> <a href="reservation-form.php">Reservations</a> </li>';}?>
@@ -18,7 +18,7 @@ include ('ReservationClass.php');
             <?php
             if(!isset($_SESSION['user'])){
                 echo '
-                <ul>
+                <ul class ="ul-menu-2">
                     <li> <a href="connexion.php">Connexion</a> </li>
                     <li> <a href="inscription.php">Inscription</a> </li>
                 </ul>';
