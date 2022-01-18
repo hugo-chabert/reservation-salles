@@ -1,21 +1,23 @@
 <?php
 session_start();
-require ('fonctions.php');
+
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Reservation Salle</title>
 </head>
+
 <body>
-    <?php require ('header.php');?>
+    <?php require('header.php'); ?>
     <main>
         <form action="" method="post">
-            <input type="text" name="title" placeholder="Titre"/>
-            <input type="text" name="desc" placeholder="Description"/>
-            <input type="date" name="datetime"/>
+            <input type="text" name="title" placeholder="Titre" />
+            <input type="text" name="desc" placeholder="Description" />
+            <input type="date" name="datetime" />
             <select name="horaires" size="1">
                 <option value="8">8h - 9h
                 <option value="9">9h - 10h
@@ -32,18 +34,19 @@ require ('fonctions.php');
             <button type="submit" name="reserver">Reserver</button>
         </form>
         <?php
-            if(isset($_POST['reserver']) && isset($_POST['title']) && isset($_POST['desc'])){
-                $datetime = new DateTime($_POST['datetime']);
-                $datetime->setTime($_POST['horaires'],0);
-                $datetimeEnd = new DateTime($_POST['datetime']);
-                $datetimeEnd->setTime($_POST['horaires'],0);
-                $datetimeEnd -> add(new DateInterval('P0Y0M0DT1H0M0S'));
-                $datetime = $datetime->format('Y-m-d H:i');
-                $datetimeEnd = $datetimeEnd->format('Y-m-d H:i');
-                $Reservation->create($_POST['title'], $_POST['desc'], $datetime, $datetimeEnd, $_SESSION['user']['id']);
-            }
+        if (isset($_POST['reserver']) && isset($_POST['title']) && isset($_POST['desc'])) {
+            $datetime = new DateTime($_POST['datetime']);
+            $datetime->setTime($_POST['horaires'], 0);
+            $datetimeEnd = new DateTime($_POST['datetime']);
+            $datetimeEnd->setTime($_POST['horaires'], 0);
+            $datetimeEnd->add(new DateInterval('P0Y0M0DT1H0M0S'));
+            $datetime = $datetime->format('Y-m-d H:i');
+            $datetimeEnd = $datetimeEnd->format('Y-m-d H:i');
+            $Reservation->create($_POST['title'], $_POST['desc'], $datetime, $datetimeEnd, $_SESSION['user']['id']);
+        }
         ?>
     </main>
-    <?php require ('footer.php');?>
+    <?php require('footer.php'); ?>
 </body>
+
 </html>

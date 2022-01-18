@@ -1,17 +1,19 @@
 <?php
 session_start();
-require ('fonctions.php');
+
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/index.css">
     <title>Accueil</title>
 </head>
+
 <body>
-    <?php require ('header.php');?>
+    <?php require('header.php'); ?>
     <main>
         <div class="container">
             <div class="pic-ctn">
@@ -23,6 +25,7 @@ require ('fonctions.php');
             </div>
         </div>
     </main>
-    <?php require ('footer.php');?>
+    <?php require('footer.php'); ?>
 </body>
+
 </html>
