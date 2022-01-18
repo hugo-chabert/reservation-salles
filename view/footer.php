@@ -1,4 +1,3 @@
-<link href="css/footer.css" rel="stylesheet">
 <footer>
     <div class="container-footer">
         <div class="part-up">
@@ -9,7 +8,7 @@
                     Eb bien vous topmber à pic !! Venez réserver une salle sur notre site pour profiter d'un espace
                     calme et conviviale pour votre plus grand bonheur. Pour réserver rien de plus simple connectez vous pour
                     réserver une salle, vous n,'avez pas de compte ? ce n'est pas grave inscrivez vous et par la suite vous pourrez
-                    reserver votre salle. Choisissez la date, l'heure, donner un titre et une description à votre créneau et une 
+                    reserver votre salle. Choisissez la date, l'heure, donner un titre et une description à votre créneau et une
                     salle vous sera decerné.
                 </p>
             </section>
@@ -27,8 +26,8 @@
                 <ul>
                     <li> <a href="reservation-form.php"> Reserver une salle </a></li>
                     <?php
-                    if(!isset($_SESSION['user'])){
-                    echo '
+                    if (!isset($_SESSION['user'])) {
+                        echo '
                     <li> <a href="connexion.php"> Connexion </a></li>
                     <li> <a href="inscription.php"> Inscription </a></li>';
                     }
@@ -43,10 +42,10 @@
                 <p class="copyright-text">Copyright &copy; All Rights Reserved by <a href="#">Francois Niang</a>, <a href="#">Hugo Chabert</a></p>
             </section>
             <section class="social">
-                <li><button class="facebook"><a  href="#"><img src="https://img.icons8.com/ios/30/000000/facebook--v1.png" alt="social" width="30px"></a></button></li>
-                <li><button class="twitter"><a  href="#"><img src="https://img.icons8.com/ios/30/000000/twitter--v1.png" alt="social"width="30px" ></a></button></li>
-                <li><button class="instagram"><a  href="#"><img src="https://img.icons8.com/ios/30/000000/instagram-new--v1.png" alt="social"width="30px"></a></button></li>
-                <li><button class="github"><a  href="#"><img src="https://img.icons8.com/ios-glyphs/30/000000/github.png" alt="social"width="30px"></a></button></li>
+                <li><button class="facebook"><a href="#"><img src="https://img.icons8.com/ios/30/000000/facebook--v1.png" alt="social" width="30px"></a></button></li>
+                <li><button class="twitter"><a href="#"><img src="https://img.icons8.com/ios/30/000000/twitter--v1.png" alt="social" width="30px"></a></button></li>
+                <li><button class="instagram"><a href="#"><img src="https://img.icons8.com/ios/30/000000/instagram-new--v1.png" alt="social" width="30px"></a></button></li>
+                <li><button class="github"><a href="#"><img src="https://img.icons8.com/ios-glyphs/30/000000/github.png" alt="social" width="30px"></a></button></li>
             </section>
         </div>
     </div>

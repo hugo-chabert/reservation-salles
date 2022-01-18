@@ -14,10 +14,10 @@ if (isset($_POST['deconnexion'])) {
         </div>
         <div class="menu">
             <ul>
-                <li> <a href="./index.php">Home</a> </li>
-                <li> <a href="./view/planning.php">Planning</a> </li>
+                <li> <a href="../index.php">Home</a> </li>
+                <li> <a href="planning.php">Planning</a> </li>
                 <?php if (isset($_SESSION['user'])) {
-                    echo '<li> <a href="./view/reservation-form.php">Reservations</a> </li>';
+                    echo '<li> <a href="reservation-form.php">Reservations</a> </li>';
                 } ?>
                 <li> <a href="profil.php">Profil</a> </li>
             </ul>
@@ -25,8 +25,8 @@ if (isset($_POST['deconnexion'])) {
             if (!isset($_SESSION['user'])) {
                 echo '
                 <ul>
-                    <li> <a href="./view/connexion.php">Connexion</a> </li>
-                    <li> <a href="./view/inscription.php">Inscription</a> </li>
+                    <li> <a href="connexion.php">Connexion</a> </li>
+                    <li> <a href="inscription.php">Inscription</a> </li>
                 </ul>';
             } else {
                 echo '

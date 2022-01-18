@@ -8,11 +8,13 @@ session_start();
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../public/css/header.css">
+    <link rel="stylesheet" href="../public/css/footer.css">
     <title>Planning</title>
 </head>
 
 <body>
-    <?php require('header.php'); ?>
+    <?php require('header_spe.php'); ?>
     <main>
 
     </main>

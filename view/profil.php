@@ -3,7 +3,7 @@
 session_start();
 
 
-if (!isset($_SESSION['user']['login'])) {
+/* if (!isset($_SESSION['user']['login'])) {
     $User->isConnected();
 }
 if (isset($_POST['changeLogin'])) {
@@ -11,7 +11,7 @@ if (isset($_POST['changeLogin'])) {
 }
 if (isset($_POST['changePassword'])) {
     $User->updatePassword($_POST['password'], $_POST['Npassword'], $_POST['CNpassword']);
-}
+} */
 ?>
 
 
@@ -20,12 +20,14 @@ if (isset($_POST['changePassword'])) {
 
 <head>
     <meta charset="UTF-8">
-    <link href="css/inscription.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../public/css/header.css">
+    <link rel="stylesheet" href="../public/css/footer.css">
     <title>Profil</title>
 </head>
 
 <body>
-    <?php require('header.php'); ?>
+    <?php require('header_spe.php'); ?>
     <main>
         <form action="" method="POST" class="decoButton">
             <button class="deco2" type="submit" name="deconnexion" value="Deconnexion">DECONNEXION</button>
