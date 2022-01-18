@@ -1,5 +1,11 @@
 <?php
+
+require_once(__DIR__ . '/../controller/Securite.php');
+require_once(__DIR__ . '/../database/Database.php');
+require_once(__DIR__ . '/../controller/Toolbox.php');
+require_once(__DIR__ . '/../controller/ReservationClass.php');
 session_start();
+
 
 if (isset($_POST['reserver'])) {
     if (!empty($_POST['title']) && !empty($_POST['desc'])) {
@@ -10,12 +16,13 @@ if (isset($_POST['reserver'])) {
         $datetimeEnd->add(new DateInterval('P0Y0M0DT1H0M0S'));
         $datetime = $datetime->format('Y-m-d H:i');
         $datetimeEnd = $datetimeEnd->format('Y-m-d H:i');
-        $Reservation->create($_POST['title'], $_POST['desc'], $datetime, $datetimeEnd, $_SESSION['user']['id']);
+        $_SESSION['objet_reservation']->create($_POST['title'], $_POST['desc'], $datetime, $datetimeEnd);
     } else {
         Toolbox::ajouterMessageAlerte("Remplir tous les champs.", Toolbox::COULEUR_ROUGE);
     }
 }
 
+var_dump($_SESSION['objet_reservation']);
 
 ?>
 

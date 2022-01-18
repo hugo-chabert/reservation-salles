@@ -16,6 +16,7 @@ if (isset($_SESSION['user'])) {
     $_SESSION['objet_reservation'] = new ReservationClass($id_session);
 }
 var_dump($_SESSION['user']);
+var_dump($_SESSION['objet_reservation']);
 ?>
 
 <!DOCTYPE html>

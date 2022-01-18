@@ -16,7 +16,7 @@ session_start();
 <body>
     <?php require('header_spe.php'); ?>
     <main>
-
+        <?php require_once(__DIR__ . '/gestion_erreur.php'); ?>
     </main>
     <?php require('footer.php'); ?>
 </body>

@@ -1,4 +1,6 @@
 <?php
+include_once(__DIR__ . "/../model/Reservation_model.php");
+
 
 class ReservationClass
 {
@@ -13,14 +15,14 @@ class ReservationClass
     public function create($title, $desc, $datetime, $datetimeEnd)
     {
 
-        if ($this->Reservation_model->sql_check_horaire($datetime) < 1) {
+        if ($this->Reservation_model->sql_check_horaire($datetime) == false) {
             $this->Reservation_model->sql_create($title, $desc, $datetime, $datetimeEnd, $this->id_user);
             Toolbox::ajouterMessageAlerte("Votre horaire est reservée !", Toolbox::COULEUR_VERTE);
-            header('Location: ../view/planning.php');
+            header('Location: ./planning.php');
             exit();
         } else {
             Toolbox::ajouterMessageAlerte("Cette horaire est deja reservée !", Toolbox::COULEUR_ROUGE);
-            header('Location: ../view/planning.php');
+            header('Location: ./reservation-form.php');
             exit();
         }
     }
