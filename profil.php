@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 require ('fonctions.php');
 ?>
@@ -40,4 +41,5 @@ if(isset($_POST['changeLogin'])){
 if(isset($_POST['changePassword'])){
     $User->updatePassword($_POST['password'], $_POST['Npassword'], $_POST['CNpassword']);
 }
+ob_end_flush();
 ?>

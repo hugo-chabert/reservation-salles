@@ -10,17 +10,18 @@ include ('ReservationClass.php');
         </div>
         <div class = "menu">
             <ul class ='ul-menu-1'>
-                <li> <a href="index.php">Home</a> </li>
-                <li> <a href="planning.php">Planning</a> </li>
-                <?php if(isset($_SESSION['user'])){echo'<li> <a href="reservation-form.php">Reservations</a> </li>';}?>
-                <li> <a href="profil.php">Profil</a> </li>
+                <li class='li-menu-1'> <a href="index.php">Home</a> </li>
+                <li class='li-menu-1'> <a href="planning.php">Planning</a> </li>
+                <?php if(isset($_SESSION['user'])){echo'<li class="li-menu-1"> <a href="reservation-form.php">Reservations</a> </li>';}?>
+                <?php if(isset($_SESSION['user'])){echo'<li class="li-menu-1"> <a href="my-res.php">Mes Reservations</a> </li>';}?>
+                <li class='li-menu-1'> <a href="profil.php">Profil</a> </li>
             </ul>
             <?php
             if(!isset($_SESSION['user'])){
                 echo '
                 <ul class ="ul-menu-2">
-                    <li> <a href="connexion.php">Connexion</a> </li>
-                    <li> <a href="inscription.php">Inscription</a> </li>
+                    <li class="li-menu-2"> <a href="connexion.php">Connexion</a> </li>
+                    <li class="li-menu-2"> <a href="inscription.php">Inscription</a> </li>
                 </ul>';
             }
             else{
