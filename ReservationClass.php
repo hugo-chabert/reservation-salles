@@ -9,7 +9,7 @@ class ReservationClass{
         $this->db = $pdo;
     }
 
-    public function create($title, $desc, $datetime, $datetimeEnd, $id_user, $semaine){
+    public function create($title, $desc, $datetime, $datetimeEnd, $id_user){
         $req = "SELECT * FROM reservations WHERE debut = :datetime";
         $stmt = $this->db->prepare($req);
         $stmt->execute(array(
@@ -19,15 +19,14 @@ class ReservationClass{
             echo "<p class='erreur'>Cette horaire est deja reservée !</p>";
         }
         else{
-            $req2 = "INSERT INTO reservations (titre, description, debut, fin, id_utilisateur, semaine) VALUES (:title, :desc, :datetime, :datetimeEnd, :id_user, :semaine)";
+            $req2 = "INSERT INTO reservations (titre, description, debut, fin, id_utilisateur) VALUES (:title, :desc, :datetime, :datetimeEnd, :id_user)";
             $stmt2 = $this->db->prepare($req2);
             $stmt2->execute(array(
                 ":title" => $title,
                 ":desc" => $desc,
                 ":datetime" => $datetime,
                 ":datetimeEnd" => $datetimeEnd,
-                ":id_user" => $id_user,
-                ":semaine" => $semaine
+                ":id_user" => $id_user
             ));
             header('Location: planning.php');
             exit();
@@ -103,14 +102,29 @@ class ReservationClass{
         $stmt = $this->db->prepare($req);
         $stmt->execute();
         $result = $stmt->fetchAll();
-        foreach($result AS $Date){
-            $value =  new DateTime($Date['debut']);
-            $today = new DateTime('now');
-            if(date_format($value, 'W') == date_format($today, 'W')){
-                if(date_format($value, 'D') == 'Wed'){
-                    echo date_format($value, 'd');
+        $i = 8;
+        while($i < 19){
+            $j = 1;
+            echo '<tr>';
+            while($j < 6){
+                $k = $i;
+                foreach($result AS $Date){
+                    $value =  new DateTime($Date['debut']);
+                    if(date_format($value, 'G') == $i && date_format($value, 'N') == $j && date_format($value, 'W') == 3){
+                        $k = $Date['id_utilisateur'].$Date['titre'];
+                        break;
+                    }
                 }
+                if($k != $i){
+                    echo '<td>'.$k.'</td>';
+                }
+                else{
+                    echo '<td>'.$i.'h</td>';
+                }
+                $j++;
             }
+            echo '</tr>';
+            $i++;
         }
     }
 }

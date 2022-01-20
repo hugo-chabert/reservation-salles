@@ -15,7 +15,6 @@ require ('fonctions.php');
     <table>
         <thead>
             <tr>
-                <th></th>
                 <th>Lundi</th>
                 <th>Mardi</th>
                 <th>Mercredi</th>
@@ -24,9 +23,8 @@ require ('fonctions.php');
             </tr>
         </thead>
         <tbody>
-            
     <?php
-    $Reservation->planning(date('W'));
+    $Reservation->planning();
     ?>
         </tbody>
     </table>
