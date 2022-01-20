@@ -98,21 +98,18 @@ class ReservationClass{
         <?php
     }
 
-    public function planning($semaine){
-        $req = "SELECT * FROM reservations WHERE semaine = :semaine";
+    public function planning(){
+        $req = "SELECT * FROM reservations";
         $stmt = $this->db->prepare($req);
-        $stmt->execute(array(
-            ":semaine" => $semaine
-        ));
-        while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-            $test =  new DateTime($row['debut']);
-            $test2 = new DateTime('2022-01-20 11:11:10');
-            echo date_format($test, 'W');
-            if($test > $test2){
-                echo 'OUI';
-            }
-            else{
-                echo 'NON';
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        foreach($result AS $Date){
+            $value =  new DateTime($Date['debut']);
+            $today = new DateTime('now');
+            if(date_format($value, 'W') == date_format($today, 'W')){
+                if(date_format($value, 'D') == 'Wed'){
+                    echo date_format($value, 'd');
+                }
             }
         }
     }
