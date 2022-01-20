@@ -58,4 +58,13 @@ class Reservation_model
         $resultat = $stmt->fetch(PDO::FETCH_ASSOC);
         return $resultat;
     }
+
+    public function sql_display_all_reserv()
+    {
+        $req = "SELECT * FROM reservations";
+        $stmt = Database::connect_db()->prepare($req);
+        $stmt->execute();
+        $resultat = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $resultat;
+    }
 }

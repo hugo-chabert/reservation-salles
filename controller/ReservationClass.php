@@ -41,4 +41,41 @@ class ReservationClass
             exit();
         }
     }
+
+    public function display_all_reserv()
+    {
+        $resultat = $this->Reservation_model->sql_display_all_reserv();
+        return $resultat;
+    }
+
+    public function planning()
+    {
+        $req = "SELECT * FROM reservations";
+        $stmt = $this->db->prepare($req);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        $i = 8;
+        while ($i < 19) {
+            $j = 1;
+            echo '<tr>';
+            while ($j < 6) {
+                $k = $i;
+                foreach ($result as $Date) {
+                    $value =  new DateTime($Date['debut']);
+                    if (date_format($value, 'G') == $i && date_format($value, 'N') == $j && date_format($value, 'W') == 3) {
+                        $k = $Date['id_utilisateur'] . $Date['titre'];
+                        break;
+                    }
+                }
+                if ($k != $i) {
+                    echo '<td>' . $k . '</td>';
+                } else {
+                    echo '<td>' . $i . 'h</td>';
+                }
+                $j++;
+            }
+            echo '</tr>';
+            $i++;
+        }
+    }
 }
