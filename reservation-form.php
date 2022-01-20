@@ -7,30 +7,35 @@ require ('fonctions.php');
 <html>
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/form.css">
     <title>Reservation Salle</title>
 </head>
 <body>
     <?php require ('header.php');?>
     <main>
-        <form action="" method="post">
-            <input type="text" name="title" placeholder="Titre"/>
-            <input type="text" name="desc" placeholder="Description"/>
-            <input type="date" name="datetime"/>
-            <select name="horaires" size="1">
-                <option value="8">8h - 9h
-                <option value="9">9h - 10h
-                <option value="10">10h - 11h
-                <option value="11">11h - 12h
-                <option value="12">12h - 13h
-                <option value="13">13h - 14h
-                <option value="14">14h - 15h
-                <option value="15">15h - 16h
-                <option value="16">16h - 17h
-                <option value="17">17h - 18h
-                <option value="18">18h - 19h
-            </select>
-            <button type="submit" name="reserver">Reserver</button>
-        </form>
+        <div class="container">
+
+            <form action="" method="post">
+                <p>Reservez une salle dès maintenant &#128197;&#128197; </p>
+                <input class="input-form" type="text" name="title" placeholder="Titre"/>
+                <input class="input-form" type="text" name="desc" placeholder="Description"/>
+                <input class="input-form" type="date" name="datetime"/>
+                <select class ="input-form" name="horaires" size="1">
+                    <option value="8">8h - 9h
+                    <option value="9">9h - 10h
+                    <option value="10">10h - 11h
+                    <option value="11">11h - 12h
+                    <option value="12">12h - 13h
+                    <option value="13">13h - 14h
+                    <option value="14">14h - 15h
+                    <option value="15">15h - 16h
+                    <option value="16">16h - 17h
+                    <option value="17">17h - 18h
+                    <option value="18">18h - 19h
+                </select>
+                <button class ="button"type="submit" name="reserver">Reserver</button>
+            </form>
+        </div>
         <?php
             if(isset($_POST['reserver']) && isset($_POST['title']) && isset($_POST['desc'])){
                 $datetime = new DateTime($_POST['datetime']);

@@ -15,31 +15,31 @@ html,body,main{
     background-image: linear-gradient(to bottom right, var(--Background2-), var(--Background-))
 }
 
-form{
+.container form{
     padding: 2%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
-    width: 20%;
-    height: 50%;
+    gap: clamp(1.5rem, 2vw, 2.5rem);;
+    width: clamp(25rem, 2vw, 31.25rem);
     background-color: var(--Background2-);
     box-shadow: 0 8px 8px  var(--White-);
 }
 
 .input-form{
-    width: 70%;
-    height: 10%;
+    width: 80%;
+    height: 2.8125rem;
+    padding: 1%;
     border: none;
     background-color: var(--Background3-);
     color: var(--White-);
-    font-size: clamp(1rem, 1.2rem, 1.5rem);
+    font-size: clamp(1rem, 2vw, 1.25rem);
 }
 
 form p{
     text-align: center;
-    font-size: 1.5em;
     color: var(--White-);
+    font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
 form a{
@@ -51,24 +51,16 @@ form a:hover{
 }
 
 .button {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-        -webkit-tap-highlight-color: transparent;
-}
-
-.button {
     width: auto;
-    height: 50px;
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+    height: 3.125rem;
     cursor: pointer;
     border: none;
     font-family: 'Comfortaa', cursive;
     color: rgba(255,255,255,0.5);
-    font-size: 20px;
-    border-radius: 4px;
+    font-size: 1.25rem;
+    border-radius: 0.25rem;
     box-shadow: inset 0px 3px 5px rgba(255,255,255,0.5), 0px 0px 10px rgba(0,0,0,0.15);
     background: rgb(2,0,36);
     background: linear-gradient(45deg, rgba(2,0,36,0) 5%, rgba(255,255,255,.5) 6%, rgba(255,255,255,0) 9%, rgba(255,255,255,.5) 10%, rgba(255,255,255,0) 17%, rgba(255,255,255,.5) 19%, rgba(255,255,255,0) 21%);
