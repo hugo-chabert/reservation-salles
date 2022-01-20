@@ -34,6 +34,7 @@ html,body,main{
     background-color: var(--Background3-);
     color: var(--White-);
     font-size: clamp(1rem, 2vw, 1.25rem);
+    font-family: Texte;
 }
 
 form p{
@@ -41,7 +42,6 @@ form p{
     color: var(--White-);
     font-size: clamp(1rem, 2vw, 1.5rem);
 }
-
 form a{
     color: var(--White-);
     transition: all .2s ease-in-out;
@@ -57,7 +57,7 @@ form a:hover{
     height: 3.125rem;
     cursor: pointer;
     border: none;
-    font-family: 'Comfortaa', cursive;
+    font-family: Texte;
     color: rgba(255,255,255,0.5);
     font-size: 1.25rem;
     border-radius: 0.25rem;

@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 require ('fonctions.php');
 ?>
@@ -15,7 +16,7 @@ require ('fonctions.php');
     <main>
         <div class="container">
             <form action="" method="post">
-                <p>Connectez vous dès maintenant !! &#128513;</p>
+                <p>Connectez vous des maintenant !! &#128513;</p>
                 <input class ="input-form"type="text" name="login" placeholder="Login"/>
                 <input class ="input-form"type="password" name="password" placeholder="Mot de passe"/>
                 <button class ='button' type="submit" name="connexion">Connexion</button>
@@ -33,4 +34,5 @@ if(isset($_POST['connexion'])){
 if(isset($_SESSION['user']['login'])){
     $User->isntConnected();
 }
+ob_end_flush();
 ?>

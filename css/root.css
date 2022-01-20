@@ -1,6 +1,8 @@
 :root{
     --Transparent-:rgba(255, 255, 255, 0);
+    --LightShadow-:rgba(0, 0, 0, 0.15);
     --Shadow-:rgba(0, 0, 0, 0.39);
+    --DarkShadow-:rgba(0, 0, 0, 0.76);
     --White- : #FFFFFF ;
     --Black- : #000000 ;
     --Grey- : #757575 ;

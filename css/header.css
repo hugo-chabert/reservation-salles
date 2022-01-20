@@ -98,7 +98,7 @@ nav ul li :hover{
     width: 150px;
     cursor: pointer;
     border: none;
-    font-family: 'Comfortaa', cursive;
+    font-family: Texte;
     color: rgba(255,255,255,0.5);
     font-size: 20px;
     box-shadow: inset 0px 3px 5px rgba(255,255,255,0.5), 0px 0px 10px rgba(0,0,0,0.15);
@@ -133,4 +133,15 @@ button:focus {
 }
 footer div div ul li a:hover{
     color: var(--Hover-);
+}
+h1, 
+h2,
+nav ul li a
+{
+    font-family: Title;
+    letter-spacing: 5px;
+}
+p, a{
+    font-family: Texte;
+    letter-spacing: 2px;
 }
