@@ -16,7 +16,7 @@ class Register
             if (password_verify($password_secure, $resultat['password'])) {
                 $_SESSION['user']['email'] = $resultat['email'];
                 $_SESSION['user']['id'] = $resultat['id_utilisateur'];
-                $_SESSION['user']['password'] = $resultat['password'];
+
 
                 Toolbox::ajouterMessageAlerte("Connexion faite.", Toolbox::COULEUR_VERTE);
                 header("Location: ../index.php");
@@ -43,7 +43,7 @@ class Register
         $password_secure = Securite::secureHTML($password);
 
         if (filter_var($email_secure, FILTER_VALIDATE_EMAIL)) {
-            if (Register::info_user($email_secure) == false) {
+            if (Register::info_user($login_secure) == false) {
                 //Hash password
                 $password_hash = password_hash($password_secure, PASSWORD_BCRYPT);
 
@@ -60,8 +60,8 @@ class Register
                 header("Location: ../index.php");
                 exit();
             }
-            if (Register::info_user($email_secure) == true) {
-                Toolbox::ajouterMessageAlerte("L'email est déjà utilisé !", Toolbox::COULEUR_ROUGE);
+            if (Register::info_user($login_secure) == true) {
+                Toolbox::ajouterMessageAlerte("Login est déjà utilisé !", Toolbox::COULEUR_ROUGE);
                 header("Location: ./inscription.php");
                 exit();
             }
@@ -72,16 +72,16 @@ class Register
         }
     }
 
-    public static function info_user($email)
+    public static function info_user($login)
     {
         //secure les post d'injection sql ou script
-        $email_secure = Securite::secureHTML($email);
+        $login_secure = Securite::secureHTML($login);
 
         //requete sql
-        $req = "SELECT * FROM utilisateurs WHERE email = :email";
+        $req = "SELECT * FROM utilisateurs WHERE login = :login";
         $stmt = Database::connect_db()->prepare($req);
         $stmt->execute(array(
-            ":email" => $email_secure
+            ":login" => $login_secure
         ));
         $resultat = $stmt->fetch(PDO::FETCH_ASSOC);
         $stmt->closeCursor();

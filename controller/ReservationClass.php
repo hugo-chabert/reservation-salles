@@ -27,11 +27,11 @@ class ReservationClass
         }
     }
 
-    public function delete()
+    public function delete($id_reservation)
     {
 
-        if ($this->Reservation_model->sql_check_delete($this->id_user) < 1) {
-            $this->Reservation_model->sql_delete($this->id_user);
+        if ($this->Reservation_model->sql_check_delete($id_reservation) == true) {
+            $this->Reservation_model->sql_delete($id_reservation);
             Toolbox::ajouterMessageAlerte("Horraire supprimé !", Toolbox::COULEUR_VERTE);
             header('Location: ../view/admin.php');
             exit();

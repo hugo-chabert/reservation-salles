@@ -19,7 +19,7 @@ if (isset($_POST['deconnexion'])) {
                 <?php if (isset($_SESSION['user'])) {
                     echo '<li> <a href="./view/reservation-form.php">Reservations</a> </li>';
                 } ?>
-                <li> <a href="profil.php">Profil</a> </li>
+                <li> <a href="./view/profil.php">Profil</a> </li>
             </ul>
             <?php
             if (!isset($_SESSION['user'])) {

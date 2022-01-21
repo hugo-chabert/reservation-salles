@@ -42,8 +42,7 @@ class Reservation_model
         ));
         $resultat = $stmt->fetch(PDO::FETCH_ASSOC);
         $stmt->closeCursor();
-        $count = $resultat->fetchColumn();
-        return $count;
+        return $resultat;
     }
 
 

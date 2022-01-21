@@ -1,0 +1,16 @@
+.container_profil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container_profil form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.container_profil input {
+    margin: 0.2rem;
+}

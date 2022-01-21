@@ -89,13 +89,13 @@ nav ul li :hover {
     margin-right: 3.125rem;
 }
 
-button:hover {
+header button:hover {
     background-position: left;
     color: white;
     box-shadow: inset 0px 3px 5px rgba(255, 255, 255, 1), 0px 0px 10px rgba(0, 0, 0, 0.25);
 }
 
-button:focus {
+header button:focus {
     outline: none;
 }
 

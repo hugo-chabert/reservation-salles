@@ -7,31 +7,39 @@ class User
     public $id;
     public $email;
 
-    public function __construct($email, $id, $password)
+    public function __construct($email, $id)
     {
         $this->email = $email;
         $this->id = $id;
-        $this->password = $password;
+
         $this->User_model = new User_model();
     }
 
 
-    //afficher données utilisateurs
+    //afficher donnée utilisateur connecté
     public function info_user()
     {
-        $resultat = $this->User_model->info_user_id($this->id);
+        $resultat = $this->User_model->sql_info_user_id($this->id);
+
+        return $resultat;
+    }
+
+    //afficher toutes les données des utilisateurs
+    public function info_all_user()
+    {
+        $resultat = $this->User_model->sql_info_all_user();
 
         return $resultat;
     }
 
     //modifier les infos du profil
-    public function modifier_profil_user($login, $prenom, $nom, $email, $password)
+    public function modifier_profil_user($login, $prenom, $nom, $email)
     {
         $login_secure = Securite::secureHTML($login);
         $prenom_secure = Securite::secureHTML($prenom);
         $nom_secure = Securite::secureHTML($nom);
         $email_secure = Securite::secureHTML($email);
-        $password_secure = Securite::secureHTML($password);
+
 
         if (filter_var($email_secure, FILTER_VALIDATE_EMAIL)) {
 
@@ -41,7 +49,7 @@ class User
             //Si les champs sont identiques//
             if (
                 $profil_user_initial['login'] == $login_secure && $profil_user_initial['prenom'] == $prenom_secure && $profil_user_initial['nom'] == $nom_secure
-                && $profil_user_initial['email'] == $email_secure && $profil_user_initial['password'] == $password_secure
+                && $profil_user_initial['email'] == $email_secure
             ) {
                 Toolbox::ajouterMessageAlerte("Aucune modification !", Toolbox::COULEUR_ROUGE);
                 header("Location: ./profil.php");
@@ -53,7 +61,7 @@ class User
                 $this->User_model->sql_modifier_profil($login_secure, $prenom_secure, $nom_secure, $email_secure, $this->id);
 
                 //set les nouvelles valeurs en variable de session
-                $resultat = $this->User_model->info_user_id($this->id);
+                $resultat = $this->User_model->sql_info_user_id($this->id);
                 $_SESSION['user']['email'] = $resultat['email'];
                 $_SESSION['user']['id'] = $resultat['id_utilisateur'];
 
@@ -67,7 +75,7 @@ class User
                 $this->User_model->sql_modifier_profil($login_secure, $prenom_secure, $nom_secure, $email_secure, $this->id);
 
                 //set les nouvelles valeurs en variable de session
-                $resultat = $this->User_model->info_user_id($this->id);
+                $resultat = $this->User_model->sql_info_user_id($this->id);
                 $_SESSION['user']['email'] = $resultat['email'];
                 $_SESSION['user']['id'] = $resultat['id_utilisateur'];
 
@@ -92,22 +100,47 @@ class User
         }
     }
 
+    public function modifier_profil_password($password_ancien, $password_nouveau)
+    {
+        $password_ancien_secure = Securite::secureHTML($password_ancien);
+        $password_nouveau_secure = Securite::secureHTML($password_nouveau);
+
+        // recup mdp bdd
+        $password_bdd = $this->User_model->sql_info_user_id($this->id);
+        $password_bdd['password'];
+
+        //verification password 
+        if (password_verify($password_ancien_secure, $password_bdd['password'])) {
+
+            $this->User_model->sql_modifier_profil_password($password_nouveau_secure, $this->id);
+            Toolbox::ajouterMessageAlerte("Mot de passe modifié !", Toolbox::COULEUR_VERTE);
+            header("Location: ./profil.php");
+            exit();
+        } else {
+            Toolbox::ajouterMessageAlerte("Mot de passe erroné !", Toolbox::COULEUR_ROUGE);
+            header("Location: ./profil.php");
+            exit();
+        }
+    }
+
+
     public function deconnexion()
     {
         session_unset();
     }
 
 
-    public function deleteUserAsAdmin($id)
+    public function delete_user_as_admin($id_user)
     {
-        $userExist = mysqli_query($this->db, "SELECT * FROM utilisateurs WHERE id = '$id'");
-        $rowDelUser = mysqli_num_rows($userExist);
-        if ($rowDelUser == 1) {
-            $deleteUser = mysqli_query($this->db, "DELETE FROM utilisateurs WHERE id = '$id'");
-            header('Location: admin.php');
+
+        if ($this->User_model->sql_delete_user_as_admin($id_user)) {
+            Toolbox::ajouterMessageAlerte("Utilisateur supprimé !", Toolbox::COULEUR_VERTE);
+            header("Location: ./admin.php");
             exit();
         } else {
-            '<p class="erreur">Cet utilisateur est inexistant !</p>';
+            Toolbox::ajouterMessageAlerte("Id non valide !", Toolbox::COULEUR_ROUGE);
+            header("Location: ./admin.php");
+            exit();
         }
     }
 }
