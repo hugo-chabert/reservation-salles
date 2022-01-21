@@ -65,7 +65,7 @@ if (!Securite::estConnecte()) {
 <body>
     <?php require('header_spe.php'); ?>
     <main>
-        <div class="container_profil">
+        <div class="profil">
             <section>
 
                 <?php require_once(__DIR__ . '/gestion_erreur.php'); ?>

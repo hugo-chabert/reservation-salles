@@ -4,28 +4,28 @@ body {
     width: 100%;
 }
 
-h1,
+footer h1,
 h2 {
     font-family: Title;
 }
 
-p {
+footer p {
     font-family: Texte;
 }
 
-ul {
+footer ul {
     list-style-type: none;
     padding: 0;
 }
 
-a {
+footer a {
     text-decoration: none;
     color: var(--TextFooter-);
     letter-spacing: 1px;
     transition: all .2s ease-in-out;
 }
 
-.part-up section p {
+footer .part-up section p {
     color: var(--TextFooter-);
     letter-spacing: 1px;
 }
@@ -63,7 +63,7 @@ footer div div section h2 {
     justify-content: space-between;
 }
 
-hr {
+footer hr {
     border-top-color: #bbb;
     opacity: 0.5;
     width: 70%;
@@ -86,16 +86,6 @@ hr {
 }
 
 .social button {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-}
-
-.social button {
     border-radius: 3.125rem;
     width: 2.8125rem;
     height: 2.8125rem;
@@ -103,7 +93,7 @@ hr {
     border: none;
     font-family: 'Comfortaa', cursive;
     color: rgba(255, 255, 255, 0.5);
-    font-size: 1.25rem;
+    font-size: 20px;
     box-shadow: inset 0px 3px 5px rgba(255, 255, 255, 0.5), 0px 0px 10px rgba(0, 0, 0, 0.15);
     background: linear-gradient(45deg, rgba(2, 0, 36, 0) 5%, rgba(255, 255, 255, .5) 6%, rgba(255, 255, 255, 0) 9%, rgba(255, 255, 255, .5) 10%, rgba(255, 255, 255, 0) 17%, rgba(255, 255, 255, .5) 19%, rgba(255, 255, 255, 0) 21%);
     background-size: 150%;

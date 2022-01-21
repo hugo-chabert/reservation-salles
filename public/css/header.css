@@ -15,19 +15,47 @@ nav {
     background-color: var(--Background-);
     display: flex;
     flex-direction: row;
+    height: 70px;
+    font-size: clamp(0.9em, 1.1rem, 1.4em);
 }
 
-nav ul {
+.ul-menu-1 {
     padding: 0;
     margin: 0;
-    text-align: center;
-    width: 40%;
+    text-align: start;
+    width: 70%;
+    padding-left: 2.5%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
 }
 
-nav ul li {
-    padding: 4%;
+.ul-menu-2 {
+    padding: 0;
+    margin: 0;
+    text-align: end;
+    width: 20%;
+    padding-right: 2.5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+}
+
+.ul-menu-1 li {
+    display: inline-block;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-size: 1.2em;
+    font-family: Title;
+    transition: all .2s ease-in-out;
+}
+
+.ul-menu-2 li {
+    display: inline-block;
+    padding-left: 4.5%;
+    padding-right: 4.5%;
     font-size: 1.2em;
     font-family: Title;
     transition: all .2s ease-in-out;
@@ -74,29 +102,29 @@ nav ul li :hover {
 }
 
 .menu button {
-    border-radius: 3.125rem;
-    height: 2.8125rem;
-    width: auto;
+    border-radius: 50px;
+    height: 45px;
+    width: 150px;
     cursor: pointer;
     border: none;
-    font-family: 'Comfortaa', cursive;
+    font-family: Texte;
     color: rgba(255, 255, 255, 0.5);
-    font-size: 1.25rem;
+    font-size: 20px;
     box-shadow: inset 0px 3px 5px rgba(255, 255, 255, 0.5), 0px 0px 10px rgba(0, 0, 0, 0.15);
     background: linear-gradient(45deg, rgba(2, 0, 36, 0) 5%, rgba(255, 255, 255, .5) 6%, rgba(255, 255, 255, 0) 9%, rgba(255, 255, 255, .5) 10%, rgba(255, 255, 255, 0) 17%, rgba(255, 255, 255, .5) 19%, rgba(255, 255, 255, 0) 21%);
     background-size: 150%;
     background-position: right;
     transition: 1s;
-    margin-right: 3.125rem;
+    margin-right: 50px;
 }
 
-header button:hover {
+button:hover {
     background-position: left;
     color: white;
     box-shadow: inset 0px 3px 5px rgba(255, 255, 255, 1), 0px 0px 10px rgba(0, 0, 0, 0.25);
 }
 
-header button:focus {
+button:focus {
     outline: none;
 }
 
@@ -118,4 +146,17 @@ header button:focus {
 
 footer div div ul li a:hover {
     color: var(--Hover-);
+}
+
+h1,
+h2,
+nav ul li a {
+    font-family: Title;
+    letter-spacing: 5px;
+}
+
+p,
+a {
+    font-family: Texte;
+    letter-spacing: 2px;
 }

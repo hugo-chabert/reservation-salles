@@ -17,9 +17,4 @@ class Securite
     {
         return (!empty($_SESSION['user']));
     }
-
-    public static function estAdmin()
-    {
-        return ($_SESSION['user']['id_droits'] === "1");
-    }
 }

@@ -130,6 +130,7 @@ class User
     }
 
 
+
     public function delete_user_as_admin($id_user)
     {
 

@@ -1,20 +1,22 @@
-:root{
-    --Transparent-:rgba(255, 255, 255, 0);
-    --Shadow-:rgba(0, 0, 0, 0.39);
-    --White- : #FFFFFF ;
-    --Black- : #000000 ;
-    --Grey- : #757575 ;
-    --Background- : rgb(35, 35, 37);
-    --BackgroundBody- : rgb(45, 45, 47);
-    --Background2- : #33353d;
-    --Background3- : #454750;
-    --Button- : #55565d;
-    --Hover- : rgb(56, 95, 131);
-    --Base- : rgb(26, 53, 78);
-    --TextFooter-:#96a2b2;
-    --Color1-:#3b5998;
-    --Color2-:#00aced;
-    --Color3-:#ea4c89;
-    --Color4-:#d8d7d7;
-    --Red-:rgb(187, 8, 8);
+:root {
+    --Transparent-: rgba(255, 255, 255, 0);
+    --LightShadow-: rgba(0, 0, 0, 0.15);
+    --Shadow-: rgba(0, 0, 0, 0.39);
+    --DarkShadow-: rgba(0, 0, 0, 0.76);
+    --White-: #FFFFFF;
+    --Black-: #000000;
+    --Grey-: #757575;
+    --Background-: rgb(35, 35, 37);
+    --BackgroundBody-: rgb(45, 45, 47);
+    --Background2-: #33353d;
+    --Background3-: #454750;
+    --Button-: #55565d;
+    --Hover-: rgb(56, 95, 131);
+    --Base-: rgb(26, 53, 78);
+    --TextFooter-: #96a2b2;
+    --Color1-: #3b5998;
+    --Color2-: #00aced;
+    --Color3-: #ea4c89;
+    --Color4-: #d8d7d7;
+    --Red-: rgb(187, 8, 8);
 }

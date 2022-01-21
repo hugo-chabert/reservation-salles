@@ -41,11 +41,11 @@ if (Securite::estConnecte()) {
 <body>
     <?php require('header_spe.php'); ?>
     <main>
-        <div class="container">
+        <div class="container_profil">
 
             <form action="" method="post">
                 <?php require_once(__DIR__ . '/gestion_erreur.php'); ?>
-                <p>Rejoignez nous dès maintenant !! &#128513;</p>
+
                 <input class="input-form" type="text" name="login" placeholder="Login" />
                 <input class="input-form" type="text" name="prenom" placeholder="Prenom" autocomplete="off">
                 <input class="input-form" type="text" name="nom" placeholder="Nom" autocomplete="off">

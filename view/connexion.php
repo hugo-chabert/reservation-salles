@@ -36,10 +36,10 @@ if (Securite::estConnecte()) {
 <body>
     <?php require('header_spe.php'); ?>
     <main>
-        <div class="container">
+        <div class="container_profil">
             <form action="" method="post">
                 <?php require_once(__DIR__ . '/gestion_erreur.php'); ?>
-                <p>Connectez vous dès maintenant !! &#128513;</p>
+                <p>Connectez-vous</p>
                 <input class="input-form" type="text" name="email" placeholder="Email" autocomplete="off">
                 <input class="input-form" type="password" name="password" placeholder="Mot de passe" />
                 <button class='button' type="submit" name="connexion">Connexion</button>

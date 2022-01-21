@@ -14,8 +14,8 @@ if (isset($_SESSION['user'])) {
 
     $_SESSION['objet_reservation'] = new ReservationClass($id_session);
 }
-var_dump($_SESSION['user']);
-var_dump($_SESSION['objet_reservation']);
+/* var_dump($_SESSION['user']);
+var_dump($_SESSION['objet_reservation']); */
 ?>
 
 <!DOCTYPE html>
@@ -27,6 +27,8 @@ var_dump($_SESSION['objet_reservation']);
     <link rel="stylesheet" href="./public/css/header.css">
     <link rel="stylesheet" href="./public/css/footer.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <title>Accueil</title>
 </head>
@@ -34,18 +36,53 @@ var_dump($_SESSION['objet_reservation']);
 <body>
     <?php require('./view/header.php'); ?>
     <main>
-        <div class="container">
+
+        <div class=" container_index">
             <?php require_once(__DIR__ . '/view/gestion_erreur.php'); ?>
-            <div class="pic-ctn">
-                <img src="https://picsum.photos/200/300?t=1" alt="" class="pic">
-                <img src="https://picsum.photos/200/300?t=2" alt="" class="pic">
-                <img src="https://picsum.photos/200/300?t=3" alt="" class="pic">
-                <img src="https://picsum.photos/200/300?t=4" alt="" class="pic">
-                <img src="https://picsum.photos/200/300?t=5" alt="" class="pic">
-            </div>
+            <section class="section-img">
+                <div id="sport" class="section_modal">
+                    <div class="index_content">
+                        <h1>Sport</h1>
+                    </div>
+                    <div class="index_overlay"></div>
+                </div>
+                <div id="detente" class="section_modal">
+                    <div class="index_content">
+                        <h1>Détente</h1>
+                    </div>
+                    <div class="index_overlay"></div>
+                </div>
+                <div id="travail" class="section_modal">
+                    <div class="index_content">
+                        <h1>Travail</h1>
+                    </div>
+                    <div class="index_overlay"></div>
+                </div>
+                <div id="event" class="section_modal">
+                    <div class="index_content">
+                        <h1>Évènements</h1>
+                    </div>
+                    <div class="index_overlay"></div>
+                </div>
+            </section>
+            <section class="section-txt">
+                <h2 data-aos="fade-right" data-aos-duration="3000">Bienvenue parmi nous <?php if (isset($_SESSION['user'])) {
+                                                                                            echo $_SESSION['user']['login'];
+                                                                                        } ?> !</h2>
+                <p data-aos="fade-left" data-aos-duration="3000">Une envie d'un endroit où faire la fête, où travailler dans le calme, où organiser vos réunion ou encore
+                    faire du sport ?
+                    Eh bien vous tomber à pic !! Venez réserver une salle sur notre site pour profiter d'un espace
+                    calme et conviviale pour votre plus grand bonheur. Pour réserver rien de plus simple connectez vous pour
+                    réserver une salle, vous n'avez pas de compte ? Ce n'est pas grave inscrivez vous et par la suite vous pourrez
+                    reserver votre salle. Choisissez la date, l'heure, donner un titre et une description à votre créneau et une
+                    salle vous sera decerné. <a href="./view/reservation-form.php"> Cliquez ICI</a> pour reserver une salle.</p>
+            </section>
         </div>
     </main>
     <?php require('./view/footer.php'); ?>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
