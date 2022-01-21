@@ -6,16 +6,6 @@ require_once(__DIR__ . '/../controller/User.php');
 session_start();
 
 
-/* if (!isset($_SESSION['user']['login'])) {
-    $User->isConnected();
-}
-if (isset($_POST['changeLogin'])) {
-    $User->updateLogin($_POST['login']);
-}
-if (isset($_POST['changePassword'])) {
-    $User->updatePassword($_POST['password'], $_POST['Npassword'], $_POST['CNpassword']);
-} */
-
 //affiche les infos profil
 if (isset($_SESSION['objet_utilisateur'])) {
     $objet_user_info = $_SESSION['objet_utilisateur']->info_user();
@@ -50,6 +40,11 @@ if (isset($_POST['submit_modification_password'])) {
         exit();
     }
 }
+
+if (!Securite::estConnecte()) {
+    header('Location:../index.php');
+}
+
 ?>
 
 

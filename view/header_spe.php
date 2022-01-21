@@ -3,7 +3,7 @@
 require_once(__DIR__ . '/../controller/ReservationClass.php');
 
 if (isset($_POST['deconnexion'])) {
-    $User->disconnect();
+    $_SESSION['objet_utilisateur']->deconnexion();
 }
 ?>
 
@@ -20,6 +20,9 @@ if (isset($_POST['deconnexion'])) {
                     echo '<li> <a href="reservation-form.php">Reservations</a> </li>';
                 } ?>
                 <li> <a href="profil.php">Profil</a> </li>
+                <?php if (Securite::estAdmin()) { ?>
+                    <li> <a href="admin.php">admin</a> </li>
+                <?php } ?>
             </ul>
             <?php
             if (!isset($_SESSION['user'])) {

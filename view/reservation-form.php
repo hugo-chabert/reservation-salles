@@ -22,6 +22,12 @@ if (isset($_POST['reserver'])) {
     }
 }
 
+
+if (!Securite::estConnecte()) {
+    header('Location:../index.php');
+}
+
+
 var_dump($_SESSION['objet_reservation']);
 
 ?>

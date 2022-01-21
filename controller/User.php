@@ -5,11 +5,11 @@ include_once(__DIR__ . "/../model/User_model.php");
 class User
 {
     public $id;
-    public $email;
 
-    public function __construct($email, $id)
+
+    public function __construct($id)
     {
-        $this->email = $email;
+
         $this->id = $id;
 
         $this->User_model = new User_model();
@@ -126,7 +126,7 @@ class User
 
     public function deconnexion()
     {
-        session_unset();
+        unset($_SESSION['user']);
     }
 
 

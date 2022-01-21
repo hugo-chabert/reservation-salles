@@ -18,9 +18,11 @@ if (isset($_POST['inscription'])) {
         Toolbox::ajouterMessageAlerte("Remplir tous les champs.", Toolbox::COULEUR_ROUGE);
     }
 }
-/* if (isset($_SESSION['user']['login'])) {
-    $User->isntConnected();
-} */
+
+
+if (Securite::estConnecte()) {
+    header('Location:../index.php');
+}
 ?>
 
 <!DOCTYPE html>

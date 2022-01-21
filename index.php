@@ -9,9 +9,8 @@ require_once(__DIR__ . '/model/Reservation_model.php');
 
 if (isset($_SESSION['user'])) {
     $id_session = $_SESSION['user']['id'];
-    $email_session = $_SESSION['user']['email'];
 
-    $_SESSION['objet_utilisateur'] = new User($email_session, $id_session);
+    $_SESSION['objet_utilisateur'] = new User($id_session);
 
     $_SESSION['objet_reservation'] = new ReservationClass($id_session);
 }

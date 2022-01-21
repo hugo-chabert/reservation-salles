@@ -4,12 +4,12 @@ require_once(__DIR__ . '/../controller/Securite.php');
 require_once(__DIR__ . '/../controller/User.php');
 require_once(__DIR__ . '/../database/Database.php');
 require_once(__DIR__ . '/../controller/Toolbox.php');
-require_once(__DIR__ . '/../controller/ReservationClass.php');
-require_once(__DIR__ . '/../model/Reservation_model.php');
+require_once(__DIR__ . '/../controller/Planning.php');
+require_once(__DIR__ . '/../model/Planning_model.php');
 session_start();
 
-
-$resultat = $_SESSION['objet_reservation']->planning();
+$planning = new Planning();
+$resultat = $planning->planning();
 
 ?>
 

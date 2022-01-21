@@ -42,15 +42,9 @@ class ReservationClass
         }
     }
 
-    public function display_all_reserv()
+    public function display_all_reserv_admin()
     {
-        $resultat = $this->Reservation_model->sql_display_all_reserv();
-        return $resultat;
-    }
-
-    public function planning()
-    {
-        $resultat = $this->Reservation_model->sql_planning();
+        $resultat = $this->Reservation_model->sql_display_all_reserv_admin();
         return $resultat;
     }
 }

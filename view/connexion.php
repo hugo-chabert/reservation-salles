@@ -6,18 +6,17 @@ require_once(__DIR__ . '/../controller/Toolbox.php');
 require_once(__DIR__ . '/../controller/Securite.php');
 require_once(__DIR__ . '/../database/database.php');
 
-/* if (isset($_POST['connexion'])) {
-    $User->connect($_POST['login'], $_POST['password']);
-}
-if (isset($_SESSION['user']['login'])) {
-    $User->isntConnected();
-} */
+
 if (isset($_POST['connexion'])) {
     if (!empty($_POST['email']) && !empty($_POST['password'])) {
         Register::connexion($_POST['email'], $_POST['password']);
     } else {
         Toolbox::ajouterMessageAlerte("Remplir tous les champs.", Toolbox::COULEUR_ROUGE);
     }
+}
+
+if (Securite::estConnecte()) {
+    header('Location:../index.php');
 }
 ?>
 

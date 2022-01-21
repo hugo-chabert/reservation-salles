@@ -10,12 +10,15 @@ class Register
         $password_secure = Securite::secureHTML($password);
 
         //verification email déjà existent
-        if (Register::info_user($email_secure) == true) {
+        if (Register::info_user_email($email_secure) == true) {
             //requete SQL
-            $resultat = Register::info_user($email_secure);
+            $resultat = Register::info_user_email($email_secure);
             if (password_verify($password_secure, $resultat['password'])) {
-                $_SESSION['user']['email'] = $resultat['email'];
+
                 $_SESSION['user']['id'] = $resultat['id_utilisateur'];
+                $_SESSION['user']['login'] = $resultat['login'];
+                $_SESSION['user']['id_droits'] = $resultat['id_droits'];
+
 
 
                 Toolbox::ajouterMessageAlerte("Connexion faite.", Toolbox::COULEUR_VERTE);
@@ -26,7 +29,7 @@ class Register
                 header("Location: ./connexion.php");
                 exit();
             }
-        } else {
+        } elseif (Register::info_user_email($email_secure) == false) {
             Toolbox::ajouterMessageAlerte("Email incorrect.", Toolbox::COULEUR_ROUGE);
             header("Location: ./connexion.php");
             exit();
@@ -82,6 +85,20 @@ class Register
         $stmt = Database::connect_db()->prepare($req);
         $stmt->execute(array(
             ":login" => $login_secure
+        ));
+        $resultat = $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+        return $resultat;
+    }
+
+    public static function info_user_email($email)
+    {
+
+        //requete sql
+        $req = "SELECT * FROM utilisateurs WHERE email = :email";
+        $stmt = Database::connect_db()->prepare($req);
+        $stmt->execute(array(
+            ":email" => $email
         ));
         $resultat = $stmt->fetch(PDO::FETCH_ASSOC);
         $stmt->closeCursor();
