@@ -27,6 +27,8 @@ body {
     color: #fff;
     transition: flex .4s ease;
     position: relative;
+    filter: blur(1.5px);
+    transition: all .5s ease-in-out;
 }
 
 .section_modal .index_overlay {
@@ -47,6 +49,7 @@ body {
 
 .section_modal:hover {
     flex: 2;
+    filter: blur(0px);
 }
 
 .section_modal:hover .index_overlay {
