@@ -98,26 +98,6 @@ class User
     }
 
 
-
-    public function updatePassword($password, $Npassword, $CNpassword)
-    {
-        $login = $_SESSION['user']['login'];
-        $change_password = mysqli_query($this->db, "SELECT * FROM utilisateurs WHERE login = '$login' AND password = '$password'");
-        $RowPassword = mysqli_num_rows($change_password);
-        if ($RowPassword == 1) {
-            if ($Npassword == $CNpassword) {
-                $new_password = mysqli_query($this->db, "UPDATE utilisateurs SET password = '$Npassword' WHERE login = '$login'");
-                session_destroy();
-                header('Location: index.php');
-                exit();
-            } else {
-                echo '<p class="erreur">Vos nouveau mots de passe ne correspondent pas</p>';
-            }
-        } else {
-            echo '<p class="erreur">Votre ancien mots de passe est incorrect</p>';
-        }
-    }
-
     public function deleteUserAsAdmin($id)
     {
         $userExist = mysqli_query($this->db, "SELECT * FROM utilisateurs WHERE id = '$id'");

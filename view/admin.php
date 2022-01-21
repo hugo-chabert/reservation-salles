@@ -14,7 +14,7 @@ if (isset($_POST['Delete'])) {
 }
 
 if (isset($_POST['DeleteR'])) {
-    $_SESSION['objet_reservation']->deleteReservAsAdmin($_POST['IDR']);
+    $_SESSION['objet_reservation']->delete($_POST['IDR']);
 }
 
 ob_end_flush();
