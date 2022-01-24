@@ -1,0 +1,59 @@
+.profil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-image: linear-gradient(to bottom right, var(--Background2-), var(--Background-));
+    color: var(--White-);
+}
+
+.profil form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+    background-color: var(--Background2-);
+    color: var(--White-);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    box-shadow: 0 2px 8px var(--White-);
+    border-radius: 5%;
+}
+
+.profil input {
+    margin: 0.2rem;
+    background-color: var(--Background3-);
+    border: none;
+    color: var(--White-);
+}
+
+.profil button {
+    width: auto;
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+    height: 3.125rem;
+    cursor: pointer;
+    border: none;
+    font-family: Texte;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.25rem;
+    border-radius: 0.25rem;
+    box-shadow: inset 0px 3px 5px rgba(255, 255, 255, 0.5), 0px 0px 10px rgba(0, 0, 0, 0.15);
+    background: rgb(2, 0, 36);
+    background: linear-gradient(45deg, rgba(2, 0, 36, 0) 5%, rgba(255, 255, 255, .5) 6%, rgba(255, 255, 255, 0) 9%, rgba(255, 255, 255, .5) 10%, rgba(255, 255, 255, 0) 17%, rgba(255, 255, 255, .5) 19%, rgba(255, 255, 255, 0) 21%);
+    background-size: 150%;
+    background-position: right;
+    transition: 1s;
+    margin-top: 0.5rem;
+}
+
+.profil button:hover {
+    background-position: left;
+    color: white;
+    box-shadow: inset 0px 3px 5px rgba(255, 255, 255, 1), 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+
+.profil button:focus {
+    outline: none;
+}
