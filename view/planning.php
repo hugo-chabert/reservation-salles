@@ -9,10 +9,14 @@ require_once(__DIR__ . '/../model/Planning_model.php');
 session_start();
 
 
-$currentPage = (int) strip_tags($_GET['week']);
 $planning = new Planning();
 $resultat = $planning->planning();
-
+if(isset($_GET['week']) && !empty($_GET['week'])){
+    $currentPage = (int) strip_tags($_GET['week']);
+}
+else{
+    $currentPage = date('W');
+}
 ?>
 
 <!DOCTYPE html>
@@ -51,12 +55,22 @@ $resultat = $planning->planning();
                         foreach ($resultat as $Date) {
                             $value =  new DateTime($Date['debut']);
                             if (date_format($value, 'G') == $i && date_format($value, 'N') == $j && date_format($value, 'W') == $currentPage) {
-                                $k = $Date['titre'];
-                                break;
+                                $req = "SELECT * FROM utilisateurs WHERE id_utilisateur = :id";
+                                $stmt = Database::connect_db()->prepare($req);
+                                $stmt->execute(array(
+                                    ":id" => $Date['fk_id_utilisateur']
+                                ));
+                                $resultat2 = $stmt->fetchAll();
+                                foreach($resultat2 as $user){
+                                    $k = $user['login'];
+                                    $l = $Date['titre'];
+                                    $m = $Date['id'];
+                                    break;
+                                }
                             }
                         }
                         if ($k != $i) {
-                            echo '<td>' . $k . '</td>';
+                            echo '<td><a href=./reservation.php?id='.$m.'>' . $k . $l . '</a></td>';
                         } else {
                             echo '<td>' . $i . 'h</td>';
                         }
