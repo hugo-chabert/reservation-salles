@@ -8,6 +8,8 @@ require_once(__DIR__ . '/../controller/Planning.php');
 require_once(__DIR__ . '/../model/Planning_model.php');
 session_start();
 
+
+$currentPage = (int) strip_tags($_GET['week']);
 $planning = new Planning();
 $resultat = $planning->planning();
 
@@ -48,7 +50,7 @@ $resultat = $planning->planning();
                         $k = $i;
                         foreach ($resultat as $Date) {
                             $value =  new DateTime($Date['debut']);
-                            if (date_format($value, 'G') == $i && date_format($value, 'N') == $j && date_format($value, 'W') == 3) {
+                            if (date_format($value, 'G') == $i && date_format($value, 'N') == $j && date_format($value, 'W') == $currentPage) {
                                 $k = $Date['titre'];
                                 break;
                             }

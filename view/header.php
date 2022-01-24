@@ -15,7 +15,7 @@ if (isset($_POST['deconnexion'])) {
         <div class="menu">
             <ul class='ul-menu-1'>
                 <li> <a href="./index.php">Home</a> </li>
-                <li> <a href="./view/planning.php">Planning</a> </li>
+                <li> <?php echo "<a href='./view/planning.php?week=".date('W')."'>Planning</a>"?> </li>
                 <?php if (isset($_SESSION['user'])) { ?>
                     <li> <a href="./view/reservation-form.php">Reservations</a> </li>;
                     <li> <a href="./view/profil.php">Profil</a> </li>

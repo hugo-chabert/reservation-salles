@@ -5,7 +5,7 @@ class Reservation_model
 
     public function sql_create($title, $desc, $datetime, $datetimeEnd, $id)
     {
-        $req = "INSERT INTO reservations (titre, description, debut, fin, fk_id_utilisateur, semaine) VALUES (:titre, :description, :debut, :fin, :fk_id_utilisateur, 0)";
+        $req = "INSERT INTO reservations (titre, description, debut, fin, fk_id_utilisateur) VALUES (:titre, :description, :debut, :fin, :fk_id_utilisateur)";
         $stmt = Database::connect_db()->prepare($req);
         $stmt->execute(array(
             ":titre" => $title,

@@ -16,14 +16,14 @@ if (isset($_POST['deconnexion'])) {
         <div class="menu">
             <ul class='ul-menu-1'>
                 <li> <a href="../index.php">Home</a> </li>
-                <li> <a href="planning.php">Planning</a> </li>
+                <li> <?php echo "<a href='./planning.php?week=".date('W')."'>Planning</a>"?> </li>
                 <?php if (isset($_SESSION['user'])) { ?>
                     <li> <a href="./reservation-form.php">Reservations</a> </li>;
                     <li> <a href="./profil.php">Profil</a> </li>
                     <li> <a href="./deconnexion.php">Deconnexion</a> </li>
                 <?php  } ?>
                 <?php if (isset($_SESSION['user']['id_droits'])) { ?>
-                    <li> <a href="./view/admin.php">Admin</a> </li>
+                    <li> <a href="./admin.php">Admin</a> </li>
                 <?php } ?>
             </ul>
             <?php
