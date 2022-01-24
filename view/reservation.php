@@ -1,6 +1,23 @@
 <?php
+require_once(__DIR__ . '/../database/database.php');
+require_once(__DIR__ . '/../controller/Securite.php');
+require_once(__DIR__ . '/../controller/Toolbox.php');
+require_once(__DIR__ . '/../controller/ReservationClass.php');
 session_start();
 
+if (!Securite::estConnecte()) {
+    header('Location:./connexion.php');
+}
+
+if(isset($_GET['id']) && !empty($_GET['id'])){
+    $currentPage = (int) strip_tags($_GET['id']);
+}
+else{
+    header('Location: ./planning.php');
+}
+
+$reservation = new ReservationClass($currentPage);
+$resultat = $reservation->display_reservation($currentPage);
 
 ?>
 
@@ -19,7 +36,10 @@ session_start();
 <body>
     <?php require('header_spe.php'); ?>
     <main>
-
+    <h1><?php echo $resultat['titre'] ?></h1>
+    <p><?php echo $resultat['description']?></p>
+    <?php echo $resultat['debut']?>
+    <?php echo $resultat['fin']?>
     </main>
     <?php require('footer.php'); ?>
 </body>

@@ -47,4 +47,10 @@ class ReservationClass
         $resultat = $this->Reservation_model->sql_display_all_reserv_admin();
         return $resultat;
     }
+
+    public function display_reservation($id)
+    {
+        $resultat = $this->Reservation_model->sql_display_reservation($id);
+        return $resultat;
+    }
 }
