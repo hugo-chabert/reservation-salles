@@ -1,0 +1,32 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+form,
+table {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+table th,
+td {
+    padding: 0.2rem;
+    text-align: center;
+    border-bottom: solid;
+    border-bottom-width: .025rem;
+}
+
+main form button {
+    border: none;
+    border-radius: 3%;
+    padding: 0.5rem;
+}
+
+main form button:hover {
+    background-color: rgb(35, 35, 37);
+    color: whitesmoke;
+}
