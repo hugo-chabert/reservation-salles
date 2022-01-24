@@ -26,6 +26,7 @@ else{
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../public/css/header.css">
     <link rel="stylesheet" href="../public/css/footer.css">
+    <link rel="stylesheet" href="../public/css/planning.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
     <title>Planning</title>
@@ -47,6 +48,7 @@ else{
             <tbody>
                 <?php
                 $i = 8;
+                $y = $i+1;
                 while ($i < 19) {
                     $j = 1;
                     echo '<tr>';
@@ -72,12 +74,13 @@ else{
                         if ($k != $i) {
                             echo '<td><a href=./reservation.php?id='.$m.'>' . $k . $l . '</a></td>';
                         } else {
-                            echo '<td>' . $i . 'h</td>';
+                            echo '<td>' . $i .'-'. $y . 'h</td>';
                         }
                         $j++;
                     }
                     echo '</tr>';
                     $i++;
+                    $y++;
                 }
                 ?>
             </tbody>
