@@ -20,6 +20,11 @@ if(isset($_GET['week']) && !empty($_GET['week'])){
             header('Location: planning.php?week='.$currentPage);
             exit();
         }
+        elseif($currentPage > 52){
+            $currentPage = 52;
+            header('Location: planning.php?week='.$currentPage);
+            exit();
+        }
         else{
             header('Location: planning.php?week='.$currentPage);
             exit();
@@ -28,7 +33,15 @@ if(isset($_GET['week']) && !empty($_GET['week'])){
     if(isset($_POST['plus'])){
         $currentPage++;
         header('Location: planning.php?week='.$currentPage);
-        exit();
+        if($currentPage > 52){
+            $currentPage = 52;
+            header('Location: planning.php?week='.$currentPage);
+            exit();
+        }
+        else{
+            header('Location: planning.php?week='.$currentPage);
+            exit();
+        }
     }
 }
 else{
