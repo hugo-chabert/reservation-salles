@@ -20,11 +20,6 @@ if(isset($_GET['week']) && !empty($_GET['week'])){
             header('Location: planning.php?week='.$currentPage);
             exit();
         }
-        elseif($currentPage > 52){
-            $currentPage = 52;
-            header('Location: planning.php?week='.$currentPage);
-            exit();
-        }
         else{
             header('Location: planning.php?week='.$currentPage);
             exit();
