@@ -3,25 +3,25 @@
             <div class="part-up">
 
                 <section class="category">
-                    <h2>Catégories</h2>
+                    <h2 data-aos="fade-right" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000">Catégories</h2>
                     <ul>
-                        <li> <a href="index.php"> Accueil </a></li>
-                        <li> <a href="planning.php"> Planning </a></li>
-                        <li> <a href="my-res.php"> Mes reservations </a></li>
+                        <li data-aos="fade-right" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1200"> <a href="index.php"> Accueil </a></li>
+                        <li data-aos="fade-right" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1400"> <a href="planning.php"> Planning </a></li>
+                        <li data-aos="fade-right" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1600"> <a href="my-res.php"> Mes reservations </a></li>
                     </ul>
                 </section>
                 <section class="link">
-                    <h2>Liens</h2>
+                    <h2 data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000">Liens</h2>
                     <ul>
-                        <li> <a href="reservation-form.php"> Reserver une salle </a></li>
+                        <li data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1400"> <a href="reservation-form.php"> Reserver une salle </a></li>
                         <?php
                         if (!isset($_SESSION['user'])) { ?>
 
-                            <li> <a href="connexion.php"> Connexion </a></li>
-                            <li> <a href="inscription.php"> Inscription </a></li>
+                            <li data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1400"> <a href="connexion.php"> Connexion </a></li>
+                            <li data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1600"> <a href="inscription.php"> Inscription </a></li>
                         <?php }
                         ?>
-                        <li> <a href="profil.php"> Profil </a></li>
+                        <li data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1600"> <a href="profil.php"> Profil </a></li>
                     </ul>
                 </section>
             </div>
@@ -29,10 +29,10 @@
             <div class="part-down">
 
                 <section class="social">
-                    <li><button class="facebook"><a href="#"><img src="https://img.icons8.com/ios/30/000000/facebook--v1.png" alt="social" width="30px"></a></button></li>
-                    <li><button class="twitter"><a href="#"><img src="https://img.icons8.com/ios/30/000000/twitter--v1.png" alt="social" width="30px"></a></button></li>
-                    <li><button class="instagram"><a href="#"><img src="https://img.icons8.com/ios/30/000000/instagram-new--v1.png" alt="social" width="30px"></a></button></li>
-                    <li><button class="github"><a href="#"><img src="https://img.icons8.com/ios-glyphs/30/000000/github.png" alt="social" width="30px"></a></button></li>
+                    <li data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000"><button class="facebook"><a href="#"><img src="https://img.icons8.com/ios/30/000000/facebook--v1.png" alt="social" width="30px"></a></button></li>
+                    <li data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1200"><button class="twitter"><a href="#"><img src="https://img.icons8.com/ios/30/000000/twitter--v1.png" alt="social" width="30px"></a></button></li>
+                    <li data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1400"><button class="instagram"><a href="#"><img src="https://img.icons8.com/ios/30/000000/instagram-new--v1.png" alt="social" width="30px"></a></button></li>
+                    <li data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1600"><button class="github"><a href="#"><img src="https://img.icons8.com/ios-glyphs/30/000000/github.png" alt="social" width="30px"></a></button></li>
                 </section>
             </div>
         </div>

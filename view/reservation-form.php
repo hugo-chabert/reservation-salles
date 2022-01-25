@@ -41,6 +41,8 @@ if (!Securite::estConnecte()) {
     <link rel="stylesheet" href="../public/css/footer.css">
     <link rel="stylesheet" href="../public/css/form.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <title>Reservation Salle</title>
 </head>
@@ -50,7 +52,7 @@ if (!Securite::estConnecte()) {
     <main>
         <div class="container_profil">
 
-            <form action="" method="post">
+            <form action="" method="post" data-aos="zoom-out-up" data-aos-duration="2000" data-aos-anchor-placement="top-center">
                 <p>Reservez une salle dès maintenant &#128197; </p>
                 <input class="input-form" type="text" name="title" placeholder="Titre" />
                 <input class="input-form" type="text" name="desc" placeholder="Description" />
@@ -75,5 +77,7 @@ if (!Securite::estConnecte()) {
     </main>
     <?php require('footer.php'); ?>
 </body>
-
+<script>
+    AOS.init();
+</script>
 </html>

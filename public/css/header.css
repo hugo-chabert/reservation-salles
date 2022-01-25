@@ -15,7 +15,7 @@ nav {
     background-color: var(--Background-);
     display: flex;
     flex-direction: row;
-    height: 70px;
+    height: 4.375rem;
     font-size: clamp(0.9em, 1.1rem, 1.4em);
 }
 
@@ -88,63 +88,6 @@ nav ul li a {
 }
 
 nav ul li :hover {
-    color: var(--Hover-);
-}
-
-.deconnexion {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-}
-
-.menu button {
-    border-radius: 50px;
-    height: 45px;
-    width: 150px;
-    cursor: pointer;
-    border: none;
-    font-family: Texte;
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 20px;
-    box-shadow: inset 0px 3px 5px rgba(255, 255, 255, 0.5), 0px 0px 10px rgba(0, 0, 0, 0.15);
-    background: linear-gradient(45deg, rgba(2, 0, 36, 0) 5%, rgba(255, 255, 255, .5) 6%, rgba(255, 255, 255, 0) 9%, rgba(255, 255, 255, .5) 10%, rgba(255, 255, 255, 0) 17%, rgba(255, 255, 255, .5) 19%, rgba(255, 255, 255, 0) 21%);
-    background-size: 150%;
-    background-position: right;
-    transition: 1s;
-    margin-right: 50px;
-}
-
-button:hover {
-    background-position: left;
-    color: white;
-    box-shadow: inset 0px 3px 5px rgba(255, 255, 255, 1), 0px 0px 10px rgba(0, 0, 0, 0.25);
-}
-
-button:focus {
-    outline: none;
-}
-
-.facebook:hover {
-    background-color: var(--Color1-);
-}
-
-.twitter:hover {
-    background-color: var(--Color2-);
-}
-
-.instagram:hover {
-    background-color: var(--Color3-);
-}
-
-.github:hover {
-    background-color: var(--Color4-);
-}
-
-footer div div ul li a:hover {
     color: var(--Hover-);
 }
 

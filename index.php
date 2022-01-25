@@ -42,25 +42,25 @@ var_dump($_SESSION['objet_reservation']); */
             <section class="section-img">
                 <div id="sport" class="section_modal">
                     <div class="index_content">
-                        <h1>Sport</h1>
+                        <h1 data-aos="fade-up" data-aos-duration="3000">Sport</h1>
                     </div>
                     <div class="index_overlay"></div>
                 </div>
                 <div id="detente" class="section_modal">
                     <div class="index_content">
-                        <h1>Détente</h1>
+                        <h1 data-aos="fade-down" data-aos-duration="3000">Détente</h1>
                     </div>
                     <div class="index_overlay"></div>
                 </div>
                 <div id="travail" class="section_modal">
                     <div class="index_content">
-                        <h1>Travail</h1>
+                        <h1 data-aos="fade-up" data-aos-duration="3000">Travail</h1>
                     </div>
                     <div class="index_overlay"></div>
                 </div>
                 <div id="event" class="section_modal">
                     <div class="index_content">
-                        <h1>Évènements</h1>
+                        <h1 data-aos="fade-down" data-aos-duration="3000">Évènements</h1>
                     </div>
                     <div class="index_overlay"></div>
                 </div>
