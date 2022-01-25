@@ -1,8 +1,56 @@
-td{
-    border: 1px solid black;
+@import url(root.css);
+@import url(font.css);
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--Background3-);
 }
 
 table {
-    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
+    width: 95%;
+    margin: 2% 0% 2% 0%;
+}
+
+table td {
+    border: 1px solid var(--Black-);
+    padding: 0.5rem;
+    text-align: center;
+    font-family: Texte;
+    color: var(--White-);
+}
+
+table tr:nth-child(even){background-color: var(--BackgroundTable1-);}
+
+table tr:nth-child(odd){background-color: var(--BackgroundTable2-);}
+
+table td:hover {background-color: var(--BackgroundTableHover-);}
+
+table th {
+    border: 1px solid var(--Black-);
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    text-align: left;
+    background-color: var(--Base-);
+    color: var(--White-);
+    text-align: center;
+    font-family: Title;
+    letter-spacing: 7px;
+}
+
+.reservationTD{
+    text-decoration: none;
+    color: var(--Base-);
+    font-weight: bold;
+}
+
+.reservationTD:hover{
+    color: var(--Black-);
+}
+
+table tr{
+    height: 4.375rem;
 }

@@ -17,7 +17,7 @@ if (isset($_POST['deconnexion'])) {
                 <li> <a href="./index.php">Home</a> </li>
                 <li> <?php echo "<a href='./view/planning.php?week=".date('W')."'>Planning</a>"?> </li>
                 <?php if (isset($_SESSION['user'])) { ?>
-                    <li> <a href="./view/reservation-form.php">Reservations</a> </li>;
+                    <li> <a href="./view/reservation-form.php">Reservations</a> </li>
                     <li> <a href="./view/profil.php">Profil</a> </li>
                     <li> <a href="./view/deconnexion.php">Deconnexion</a> </li>
                 <?php  } ?>

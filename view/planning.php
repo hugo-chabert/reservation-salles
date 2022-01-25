@@ -32,8 +32,8 @@ else{
     <title>Planning</title>
 </head>
 
-<body>
-    <?php require('header_spe.php'); ?>
+    <body>
+        <?php require('header_spe.php'); ?>
     <main>
         <table>
             <thead>
@@ -47,16 +47,16 @@ else{
             </thead>
             <tbody>
                 <?php
-                $i = 8;
-                $y = $i+1;
-                while ($i < 19) {
-                    $j = 1;
+                $heure = 8;
+                $heure2 = $heure+1;
+                while ($heure < 19) {
+                    $jour = 1;
                     echo '<tr>';
-                    while ($j < 6) {
-                        $k = $i;
+                    while ($jour < 6) {
+                        $userLogin = $heure;
                         foreach ($resultat as $Date) {
                             $value =  new DateTime($Date['debut']);
-                            if (date_format($value, 'G') == $i && date_format($value, 'N') == $j && date_format($value, 'W') == $currentPage) {
+                            if (date_format($value, 'G') == $heure && date_format($value, 'N') == $jour && date_format($value, 'W') == $currentPage) {
                                 $req = "SELECT * FROM utilisateurs WHERE id_utilisateur = :id";
                                 $stmt = Database::connect_db()->prepare($req);
                                 $stmt->execute(array(
@@ -64,23 +64,23 @@ else{
                                 ));
                                 $resultat2 = $stmt->fetchAll();
                                 foreach($resultat2 as $user){
-                                    $k = $user['login'];
-                                    $l = $Date['titre'];
-                                    $m = $Date['id'];
+                                    $userLogin = $user['login'];
+                                    $reservationTitre = $Date['titre'];
+                                    $reservationId = $Date['id'];
                                     break;
                                 }
                             }
                         }
-                        if ($k != $i) {
-                            echo '<td><a href=./reservation.php?id='.$m.'>' . $k . $l . '</a></td>';
+                        if ($userLogin != $heure) {
+                            echo '<td><a class="reservationTD" href=./reservation.php?id='.$reservationId.'>' .'Utilisateur : '.$userLogin .'</br>Titre : '. $reservationTitre . '</a></td>';
                         } else {
-                            echo '<td>' . $i .'-'. $y . 'h</td>';
+                            echo '<td>' . $heure .'-'. $heure2 . 'h</td>';
                         }
-                        $j++;
+                        $jour++;
                     }
                     echo '</tr>';
-                    $i++;
-                    $y++;
+                    $heure++;
+                    $heure2++;
                 }
                 ?>
             </tbody>
