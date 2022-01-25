@@ -13,10 +13,32 @@ $planning = new Planning();
 $resultat = $planning->planning();
 if(isset($_GET['week']) && !empty($_GET['week'])){
     $currentPage = (int) strip_tags($_GET['week']);
+    if(isset($_POST['moins'])){
+        $currentPage--;
+        if($currentPage == 0){
+            $currentPage = 1;
+            header('Location: planning.php?week='.$currentPage);
+            exit();
+        }
+        else{
+            header('Location: planning.php?week='.$currentPage);
+            exit();
+        }
+    }
+    if(isset($_POST['plus'])){
+        $currentPage++;
+        header('Location: planning.php?week='.$currentPage);
+        exit();
+    }
 }
 else{
     $currentPage = date('W');
+    header('Location: planning.php?week='.$currentPage);
+    exit();
 }
+$week_start = new DateTime();
+$week_start->setISODate(2022,$currentPage);
+
 ?>
 
 <!DOCTYPE html>
@@ -35,6 +57,13 @@ else{
     <body>
         <?php require('header_spe.php'); ?>
     <main>
+        <p>
+            Semaine du Lundi <?php echo $week_start->format('d/m/Y')?>
+        </p>
+        <form action="" method="post" class="pagination">
+            <button class='button' type="submit" name="moins">-</button>
+            <button class='button' type="submit" name="plus">+</button>
+        </form>
         <table>
             <thead>
                 <tr>
