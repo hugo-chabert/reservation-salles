@@ -37,8 +37,8 @@ table th {
     background-color: var(--Base-);
     color: var(--White-);
     text-align: center;
-    font-family: Title;
-    letter-spacing: 7px;
+    font-family: Texte;
+    letter-spacing: 0.1875rem;
 }
 
 .reservationTD{
@@ -94,4 +94,14 @@ main form button:hover {
 
 main form button:focus {
     outline: none;
+}
+
+td a{
+    text-decoration: none;
+    color: var(--White-);
+}
+
+td a:hover{
+    color: var(--Black-);
+    font-weight: bold;
 }

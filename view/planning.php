@@ -111,7 +111,7 @@ $week_start->setISODate(2022,$currentPage);
                         if ($userLogin != $heure) {
                             echo '<td><a class="reservationTD" href=./reservation.php?id='.$reservationId.'>' .'Utilisateur : '.$userLogin .'</br>Titre : '. $reservationTitre . '</a></td>';
                         } else {
-                            echo '<td>' . $heure .'-'. $heure2 . 'h</td>';
+                            echo '<td><a href=./reservation-form.php>' . $heure .'-'. $heure2 . 'h</a></td>';
                         }
                         $jour++;
                     }

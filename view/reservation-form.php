@@ -81,7 +81,6 @@ if (!Securite::estConnecte()) {
                     <option value="18">18h - 19h
                 </select>
                 <button class="button" type="submit" name="reserver">Reserver</button>
-
             </form>
         </div>
     </main>

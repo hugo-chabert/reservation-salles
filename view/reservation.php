@@ -19,6 +19,12 @@ else{
 $reservation = new ReservationClass($currentPage);
 $resultat = $reservation->display_reservation($currentPage);
 
+$datetimeStart = new DateTime($resultat['debut']);
+$datetimeEnd = new DateTime($resultat['fin']);
+$datetimeStartDay = date_format($datetimeStart, 'j/n/o');
+$datetimeStartHour = date_format($datetimeStart, 'G');
+$datetimeEndHour = date_format($datetimeEnd, 'G');
+
 ?>
 
 <!DOCTYPE html>
@@ -28,6 +34,7 @@ $resultat = $reservation->display_reservation($currentPage);
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../public/css/header.css">
     <link rel="stylesheet" href="../public/css/footer.css">
+    <link rel="stylesheet" href="../public/css/reservation.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
     <title>Evenement</title>
@@ -36,10 +43,9 @@ $resultat = $reservation->display_reservation($currentPage);
 <body>
     <?php require('header_spe.php'); ?>
     <main>
-    <h1><?php echo $resultat['titre'] ?></h1>
-    <p><?php echo $resultat['description']?></p>
-    <?php echo $resultat['debut']?>
-    <?php echo $resultat['fin']?>
+        <h1><?php echo $resultat['titre'] ?></h1>
+        <p class="horaires"><?php echo $datetimeStartDay.' de '.$datetimeStartHour.'h à '.$datetimeEndHour.'h';?></p>
+        <p><?php echo $resultat['description']?></p>
     </main>
     <?php require('footer.php'); ?>
 </body>
