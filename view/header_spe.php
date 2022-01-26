@@ -11,7 +11,7 @@ if (isset($_POST['deconnexion'])) {
 <header>
     <nav>
         <div class="logo">
-            <a href="index.php"><img src="https://img.icons8.com/external-parzival-1997-detailed-outline-parzival-1997/64/ffffff/external-schedule-organization-management-parzival-1997-detailed-outline-parzival-1997.png" alt="logo" width="60px"  data-aos="zoom-in" data-aos-duration="1500"></a>
+            <a href="../index.php"><img src="https://img.icons8.com/external-parzival-1997-detailed-outline-parzival-1997/64/ffffff/external-schedule-organization-management-parzival-1997-detailed-outline-parzival-1997.png" alt="logo" width="60px"  data-aos="zoom-in" data-aos-duration="1500"></a>
         </div>
         <div class="menu">
             <ul class='ul-menu-1'>
