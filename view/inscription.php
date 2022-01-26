@@ -8,7 +8,6 @@ require_once(__DIR__ . '/../database/database.php');
 
 if (isset($_POST['inscription'])) {
     if (!empty($_POST['login']) && !empty($_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['Cpassword'])) {
-
         if ($_POST['password'] == $_POST['Cpassword']) {
             Register::register_utilisateur($_POST['login'], $_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['password']);
         } else {
@@ -18,7 +17,6 @@ if (isset($_POST['inscription'])) {
         Toolbox::ajouterMessageAlerte("Remplir tous les champs.", Toolbox::COULEUR_ROUGE);
     }
 }
-
 
 if (Securite::estConnecte()) {
     header('Location:../index.php');
@@ -42,10 +40,8 @@ if (Securite::estConnecte()) {
     <?php require('header_spe.php'); ?>
     <main>
         <div class="container_profil">
-
             <form action="" method="post">
                 <?php require_once(__DIR__ . '/gestion_erreur.php'); ?>
-
                 <input class="input-form" type="text" name="login" placeholder="Login" />
                 <input class="input-form" type="text" name="prenom" placeholder="Prenom" autocomplete="off">
                 <input class="input-form" type="text" name="nom" placeholder="Nom" autocomplete="off">
@@ -56,7 +52,6 @@ if (Securite::estConnecte()) {
                 <p class="message">Vous avez déjà un compte ? <br><a class="aa" href="connexion.php">Connectez vous</a></p>
             </form>
         </div>
-
     </main>
     <?php require('footer_spe.php'); ?>
 </body>

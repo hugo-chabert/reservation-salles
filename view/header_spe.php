@@ -30,7 +30,6 @@ if (isset($_POST['deconnexion'])) {
             </ul>
             <?php
             if (!isset($_SESSION['user'])) { ?>
-
                 <ul class="ul-menu-2">
                     <li data-aos="zoom-in" data-aos-duration="2200"> <a href="./connexion.php">Connexion</a> </li>
                     <li data-aos="zoom-in" data-aos-duration="2300"> <a href="./inscription.php">Inscription</a> </li>

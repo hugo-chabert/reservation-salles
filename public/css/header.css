@@ -1,5 +1,6 @@
 @import url(root.css);
 @import url(font.css);
+
 body {
     margin: 0;
     padding: 0;
@@ -110,15 +111,12 @@ nav ul li :hover {
     color: var(--Hover-);
 }
 
-h1,
-h2,
-nav ul li a {
+h1, h2, nav ul li a {
     font-family: Title;
     letter-spacing: 5px;
 }
 
-p,
-a {
+p, a {
     font-family: Texte;
     letter-spacing: 2px;
 }

@@ -6,7 +6,6 @@ require_once(__DIR__ . '/../controller/Toolbox.php');
 require_once(__DIR__ . '/../controller/Securite.php');
 require_once(__DIR__ . '/../database/database.php');
 
-
 if (isset($_POST['connexion'])) {
     if (!empty($_POST['email']) && !empty($_POST['password'])) {
         Register::connexion($_POST['email'], $_POST['password']);

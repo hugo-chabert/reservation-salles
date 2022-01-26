@@ -60,7 +60,6 @@ if (!Securite::estConnecte()) {
     <?php require('header_spe.php'); ?>
     <main>
         <div class="container_profil">
-
             <form action="" method="post" data-aos="zoom-out-up" data-aos-duration="2000" data-aos-anchor-placement="top-center">
                 <?php require_once(__DIR__ . '/gestion_erreur.php'); ?>
                 <p>Reservez une salle dès maintenant &#128197; </p>

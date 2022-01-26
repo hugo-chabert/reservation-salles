@@ -7,3 +7,4 @@ if (!empty($_SESSION['alert'])) {
     }
     unset($_SESSION['alert']);
 }
+?>

@@ -11,3 +11,4 @@ if (!Securite::estConnecte()) {
     header('Location:../index.php');
     exit();
 }
+?>

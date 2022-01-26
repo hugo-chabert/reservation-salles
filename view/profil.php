@@ -69,11 +69,8 @@ if (!Securite::estConnecte()) {
     <main>
         <div class="profil">
             <section>
-
                 <?php require_once(__DIR__ . '/gestion_erreur.php'); ?>
-
                 <h2 data-aos="zoom-in-down" data-aos-duration="2000" data-aos-anchor-placement="top-center">Mon profil : </h2>
-
                 <form action="profil.php" method="post" data-aos="zoom-out-up" data-aos-duration="2000" data-aos-anchor-placement="center">
                     <label for="login"> Login </label>
                     <input type="text" name="login" value="<?= $objet_user_info['login'] ?>" autocomplete="off">
@@ -83,7 +80,6 @@ if (!Securite::estConnecte()) {
                     <input type="text" name="nom" value="<?= $objet_user_info['nom'] ?>" autocomplete="off">
                     <label for="email"> Email </label>
                     <input type="text" name="email" value="<?= $objet_user_info['email'] ?>" autocomplete="off">
-
                     <button type="submit" name="submit">Modifier profil</button>
                 </form>
                 <form action="profil.php" method="post" data-aos="zoom-out-up" data-aos-duration="2500" data-aos-anchor-placement="center">
@@ -91,10 +87,7 @@ if (!Securite::estConnecte()) {
                     <input type="password" name="password_nouveau" value="" autocomplete="off" placeholder="Nouveau mot de passe">
                     <input type="password" name="password_confirmation" value="" autocomplete="off" placeholder="Confirmation mot de passe">
                     <button type="submit" name="submit_modification_password">Modifier password</button>
-
                 </form>
-
-
             </section>
         </div>
     </main>

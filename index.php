@@ -9,13 +9,9 @@ require_once(__DIR__ . '/model/Reservation_model.php');
 
 if (isset($_SESSION['user'])) {
     $id_session = $_SESSION['user']['id'];
-
     $_SESSION['objet_utilisateur'] = new User($id_session);
-
     $_SESSION['objet_reservation'] = new ReservationClass($id_session);
 }
-/* var_dump($_SESSION['user']);
-var_dump($_SESSION['objet_reservation']); */
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +32,6 @@ var_dump($_SESSION['objet_reservation']); */
 <body>
     <?php require('./view/header.php'); ?>
     <main>
-
         <div class=" container_index">
             <?php require_once(__DIR__ . '/view/gestion_erreur.php'); ?>
             <section class="section-img">

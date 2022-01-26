@@ -17,13 +17,10 @@ if (isset($_POST['Delete_reservation'])) {
     $_SESSION['objet_reservation']->delete($_POST['id_reservation']);
 }
 
-
 ob_end_flush();
 /* $User->display_all_users(); */
 $resultat_reservations = $_SESSION['objet_reservation']->display_all_reserv_admin();
 $resultat_all_user = $_SESSION['objet_utilisateur']->info_all_user();
-
-
 
 ?>
 
@@ -65,7 +62,6 @@ $resultat_all_user = $_SESSION['objet_utilisateur']->info_all_user();
                     ?>
                 </tbody>
             </table>
-
             <form action="" method="post" data-aos="zoom-out-up" data-aos-duration="2800" data-aos-anchor-placement="center">
                 <input type="text" name="id_user" placeholder="Entrez l'ID" />
                 <button type="submit" name="Delete_user">Supprimer l'utilisateur</button>

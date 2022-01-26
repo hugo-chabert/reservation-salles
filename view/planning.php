@@ -8,7 +8,6 @@ require_once(__DIR__ . '/../controller/Planning.php');
 require_once(__DIR__ . '/../model/Planning_model.php');
 session_start();
 
-
 $planning = new Planning();
 
 ?>
