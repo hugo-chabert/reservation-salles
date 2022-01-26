@@ -1,5 +1,10 @@
 <?php
+namespace Model;
 
+use PDO;
+use Database\Database;
+use Controller\Toolbox;
+use Controller\Securite;
 
 class Register
 {

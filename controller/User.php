@@ -1,6 +1,11 @@
 <?php
-include_once(__DIR__ . "/../model/Register_Login_model.php");
-include_once(__DIR__ . "/../model/User_model.php");
+
+namespace Controller;
+
+use Model\User_model;
+use Controller\Toolbox;
+use Controller\Securite;
+use Model\Register;
 
 class User
 {

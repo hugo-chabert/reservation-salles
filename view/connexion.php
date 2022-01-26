@@ -1,10 +1,15 @@
 <?php
+require '../vendor/autoload.php';
 session_start();
 
-require_once(__DIR__ . '/../model/Register_Login_model.php');
-require_once(__DIR__ . '/../controller/Toolbox.php');
-require_once(__DIR__ . '/../controller/Securite.php');
-require_once(__DIR__ . '/../database/database.php');
+use Model\Register;
+use Controller\Toolbox;
+use Controller\Securite;
+
+// require_once(__DIR__ . '/../model/Register_Login_model.php');
+// require_once(__DIR__ . '/../controller/Toolbox.php');
+// require_once(__DIR__ . '/../controller/Securite.php');
+// require_once(__DIR__ . '/../database/database.php');
 
 if (isset($_POST['connexion'])) {
     if (!empty($_POST['email']) && !empty($_POST['password'])) {

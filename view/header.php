@@ -1,7 +1,6 @@
 <?php
-require_once(__DIR__ . '/../controller/ReservationClass.php');
-require_once(__DIR__ . '/../controller/User.php');
-
+// require_once(__DIR__ . '/../controller/ReservationClass.php');
+// require_once(__DIR__ . '/../controller/User.php');
 if (isset($_POST['deconnexion'])) {
     $_SESSION['objet_utilisateur']->deconnexion();
 }

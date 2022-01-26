@@ -1,15 +1,19 @@
 <?php
+require '../vendor/autoload.php';
 
-require_once(__DIR__ . '/../controller/Securite.php');
-require_once(__DIR__ . '/../database/Database.php');
-require_once(__DIR__ . '/../controller/Toolbox.php');
-require_once(__DIR__ . '/../controller/ReservationClass.php');
+use Controller\Toolbox;
+use Controller\Securite;
+
+// require_once(__DIR__ . '/../controller/Securite.php');
+// require_once(__DIR__ . '/../database/Database.php');
+// require_once(__DIR__ . '/../controller/Toolbox.php');
+// require_once(__DIR__ . '/../controller/ReservationClass.php');
 session_start();
 
 
 if(isset($_POST['reserver'])){
     if(!empty($_POST['title']) && !empty($_POST['desc'])){
-        $datetime = new DateTime($_POST['datetime']);
+        $datetime = new \DateTime($_POST['datetime']);
         $weekend = date_format($datetime, 'N');
         if($weekend == 6 || $weekend == 7){
             Toolbox::ajouterMessageAlerte("Vous ne pouvez pas reserver le weekend !", Toolbox::COULEUR_ROUGE);
@@ -18,9 +22,9 @@ if(isset($_POST['reserver'])){
         }
         else{
             $datetime->setTime($_POST['horaires'], 0);
-            $datetimeEnd = new DateTime($_POST['datetime']);
+            $datetimeEnd = new \DateTime($_POST['datetime']);
             $datetimeEnd->setTime($_POST['horaires'], 0);
-            $datetimeEnd->add(new DateInterval('P0Y0M0DT1H0M0S'));
+            $datetimeEnd->add(new \DateInterval('P0Y0M0DT1H0M0S'));
             $datetime = $datetime->format('Y-m-d H:i');
             $datetimeEnd = $datetimeEnd->format('Y-m-d H:i');
             $_SESSION['objet_reservation']->create($_POST['title'], $_POST['desc'], $datetime, $datetimeEnd, $_POST['categorie']);

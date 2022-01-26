@@ -1,4 +1,8 @@
 <?php
+namespace Model;
+
+use PDO;
+use Database\Database;
 
 class Reservation_model
 {

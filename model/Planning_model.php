@@ -1,4 +1,7 @@
 <?php
+namespace Model;
+
+use Database\Database;
 
 class Planning_model
 {

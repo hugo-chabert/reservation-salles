@@ -1,8 +1,8 @@
 <?php
-require_once(__DIR__ . '/../controller/Securite.php');
-require_once(__DIR__ . '/../controller/Toolbox.php');
-require_once(__DIR__ . '/../database/database.php');
-require_once(__DIR__ . '/../controller/User.php');
+require '../vendor/autoload.php';
+use Controller\Toolbox;
+use Controller\Securite;
+
 session_start();
 
 

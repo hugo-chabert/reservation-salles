@@ -1,10 +1,11 @@
 <?php
+require '../vendor/autoload.php';
 session_start();
 
-require_once(__DIR__ . '/../model/Register_Login_model.php');
-require_once(__DIR__ . '/../controller/Toolbox.php');
-require_once(__DIR__ . '/../controller/Securite.php');
-require_once(__DIR__ . '/../database/database.php');
+use Model\Register;
+use Controller\Toolbox;
+use Controller\Securite;
+
 
 if (isset($_POST['inscription'])) {
     if (!empty($_POST['login']) && !empty($_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['Cpassword'])) {

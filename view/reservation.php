@@ -1,8 +1,12 @@
 <?php
-require_once(__DIR__ . '/../database/database.php');
-require_once(__DIR__ . '/../controller/Securite.php');
-require_once(__DIR__ . '/../controller/Toolbox.php');
-require_once(__DIR__ . '/../controller/ReservationClass.php');
+require '../vendor/autoload.php';
+use Database\Database;
+use Controller\Securite;
+use Controller\ReservationClass;
+// require_once(__DIR__ . '/../database/database.php');
+// require_once(__DIR__ . '/../controller/Securite.php');
+// require_once(__DIR__ . '/../controller/Toolbox.php');
+// require_once(__DIR__ . '/../controller/ReservationClass.php');
 session_start();
 
 if (!Securite::estConnecte()) {
@@ -19,8 +23,8 @@ else{
 $reservation = new ReservationClass($currentPage);
 $resultat = $reservation->display_reservation($currentPage);
 
-$datetimeStart = new DateTime($resultat['debut']);
-$datetimeEnd = new DateTime($resultat['fin']);
+$datetimeStart = new \DateTime($resultat['debut']);
+$datetimeEnd = new \DateTime($resultat['fin']);
 $datetimeStartDay = date_format($datetimeStart, 'j/n/o');
 $datetimeStartHour = date_format($datetimeStart, 'G');
 $datetimeEndHour = date_format($datetimeEnd, 'G');

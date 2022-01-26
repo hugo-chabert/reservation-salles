@@ -1,4 +1,8 @@
 <?php
+namespace Model;
+
+use PDO;
+use Database\Database;
 
 class User_model
 {
