@@ -44,6 +44,14 @@ $datetimeEndHour = date_format($datetimeEnd, 'G');
     <?php require('header_spe.php'); ?>
     <main>
         <h1><?php echo $resultat['titre'] ?></h1>
+        <p>Catégorie : <?php $req = "SELECT * FROM categories WHERE id_categorie = :id";
+                                $stmt = Database::connect_db()->prepare($req);
+                                $stmt->execute(array(
+                                    ":id" => $resultat['fk_id_categorie']
+                                ));
+                            foreach($stmt as $categorie){
+                                echo $categorie['nom'];
+                            }?></p>
         <p class="horaires"><?php echo $datetimeStartDay.' de '.$datetimeStartHour.'h à '.$datetimeEndHour.'h';?></p>
         <p><?php echo $resultat['description']?></p>
     </main>

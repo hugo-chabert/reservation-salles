@@ -10,42 +10,6 @@ session_start();
 
 
 $planning = new Planning();
-$resultat = $planning->planning();
-if(isset($_GET['week']) && !empty($_GET['week'])){
-    $currentPage = (int) strip_tags($_GET['week']);
-    if(isset($_POST['moins'])){
-        $currentPage--;
-        if($currentPage == 0){
-            $currentPage = 1;
-            header('Location: planning.php?week='.$currentPage);
-            exit();
-        }
-        else{
-            header('Location: planning.php?week='.$currentPage);
-            exit();
-        }
-    }
-    if(isset($_POST['plus'])){
-        $currentPage++;
-        header('Location: planning.php?week='.$currentPage);
-        if($currentPage > 52){
-            $currentPage = 52;
-            header('Location: planning.php?week='.$currentPage);
-            exit();
-        }
-        else{
-            header('Location: planning.php?week='.$currentPage);
-            exit();
-        }
-    }
-}
-else{
-    $currentPage = date('W');
-    header('Location: planning.php?week='.$currentPage);
-    exit();
-}
-$week_start = new DateTime();
-$week_start->setISODate(2022,$currentPage);
 
 ?>
 
@@ -65,8 +29,10 @@ $week_start->setISODate(2022,$currentPage);
     <body>
         <?php require('header_spe.php'); ?>
     <main>
-        <p>
-            Semaine du Lundi <?php echo $week_start->format('d/m/Y')?>
+        <p>Semaine du Lundi : 
+        <?php
+            $planning->verification_semaine()
+            ?>
         </p>
         <form action="" method="post" class="pagination">
             <button class='button' type="submit" name="moins">-</button>
@@ -84,45 +50,12 @@ $week_start->setISODate(2022,$currentPage);
             </thead>
             <tbody>
                 <?php
-                $heure = 8;
-                $heure2 = $heure+1;
-                while ($heure < 19) {
-                    $jour = 1;
-                    echo '<tr>';
-                    while ($jour < 6) {
-                        $userLogin = $heure;
-                        foreach ($resultat as $Date) {
-                            $value =  new DateTime($Date['debut']);
-                            if (date_format($value, 'G') == $heure && date_format($value, 'N') == $jour && date_format($value, 'W') == $currentPage) {
-                                $req = "SELECT * FROM utilisateurs WHERE id_utilisateur = :id";
-                                $stmt = Database::connect_db()->prepare($req);
-                                $stmt->execute(array(
-                                    ":id" => $Date['fk_id_utilisateur']
-                                ));
-                                $resultat2 = $stmt->fetchAll();
-                                foreach($resultat2 as $user){
-                                    $userLogin = $user['login'];
-                                    $reservationTitre = $Date['titre'];
-                                    $reservationId = $Date['id'];
-                                    break;
-                                }
-                            }
-                        }
-                        if ($userLogin != $heure) {
-                            echo '<td><a class="reservationTD" href=./reservation.php?id='.$reservationId.'>' .'Utilisateur : '.$userLogin .'</br>Titre : '. $reservationTitre . '</a></td>';
-                        } else {
-                            echo '<td><a href=./reservation-form.php>' . $heure .'-'. $heure2 . 'h</a></td>';
-                        }
-                        $jour++;
-                    }
-                    echo '</tr>';
-                    $heure++;
-                    $heure2++;
-                }
+                $planning->afficher_planning()
                 ?>
             </tbody>
         </table>
         <?php require_once(__DIR__ . '/gestion_erreur.php'); ?>
+    
     </main>
     <?php require('footer.php'); ?>
 </body>

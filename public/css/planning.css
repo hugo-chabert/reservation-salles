@@ -41,9 +41,24 @@ table th {
     letter-spacing: 0.1875rem;
 }
 
-.reservationTD{
+.reservationTD1{
     text-decoration: none;
-    color: var(--Base-);
+    color: var(--Sport-);
+    font-weight: bold;
+}
+.reservationTD2{
+    text-decoration: none;
+    color: var(--Detente-);
+    font-weight: bold;
+}
+.reservationTD3{
+    text-decoration: none;
+    color: var(--Travail-);
+    font-weight: bold;
+}
+.reservationTD4{
+    text-decoration: none;
+    color: var(--Evenement-);
     font-weight: bold;
 }
 
