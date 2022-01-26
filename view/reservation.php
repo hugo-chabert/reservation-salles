@@ -41,7 +41,7 @@ $resultat = $reservation->display_reservation($currentPage);
     <?php echo $resultat['debut']?>
     <?php echo $resultat['fin']?>
     </main>
-    <?php require('footer.php'); ?>
+    <?php require('footer_spe.php'); ?>
 </body>
 
 </html>

@@ -58,6 +58,8 @@ $week_start->setISODate(2022,$currentPage);
     <link rel="stylesheet" href="../public/css/footer.css">
     <link rel="stylesheet" href="../public/css/planning.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <title>Planning</title>
 </head>
@@ -65,12 +67,12 @@ $week_start->setISODate(2022,$currentPage);
     <body>
         <?php require('header_spe.php'); ?>
     <main>
-        <p>
+        <p data-aos="fade-up" data-aos-duration="1500">
             Semaine du Lundi <?php echo $week_start->format('d/m/Y')?>
         </p>
         <form action="" method="post" class="pagination">
-            <button class='button' type="submit" name="moins">-</button>
-            <button class='button' type="submit" name="plus">+</button>
+            <button class='button' type="submit" name="moins" data-aos="fade-right" data-aos-duration="2000">-</button>
+            <button class='button' type="submit" name="plus" data-aos="fade-left" data-aos-duration="2000">+</button>
         </form>
         <table>
             <thead>
@@ -124,7 +126,9 @@ $week_start->setISODate(2022,$currentPage);
         </table>
         <?php require_once(__DIR__ . '/gestion_erreur.php'); ?>
     </main>
-    <?php require('footer.php'); ?>
+    <?php require('footer_spe.php'); ?>
 </body>
-
+<script>
+    AOS.init();
+</script>
 </html>
