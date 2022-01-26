@@ -40,19 +40,19 @@ if (Securite::estConnecte()) {
 <body>
     <?php require('header_spe.php'); ?>
     <main>
-        <div class="container_profil">
-            <form action="" method="post">
-                <?php require_once(__DIR__ . '/gestion_erreur.php'); ?>
-                <input class="input-form" type="text" name="login" placeholder="Login" />
-                <input class="input-form" type="text" name="prenom" placeholder="Prenom" autocomplete="off">
-                <input class="input-form" type="text" name="nom" placeholder="Nom" autocomplete="off">
-                <input class="input-form" type="text" name="email" placeholder="Email" autocomplete="off">
-                <input class="input-form" type="password" name="password" placeholder="Mot de passe" />
-                <input class="input-form" type="password" name="Cpassword" placeholder="Confirmez le mot de passe" />
-                <button class="button" type="submit" name="inscription">Creer un compte</button>
-                <p class="message">Vous avez déjà un compte ? <br><a class="aa" href="connexion.php">Connectez vous</a></p>
-            </form>
-        </div>
+
+        <form action="" method="post">
+            <?php require_once(__DIR__ . '/gestion_erreur.php'); ?>
+            <input type="text" name="login" placeholder="Login" />
+            <input type="text" name="prenom" placeholder="Prenom" autocomplete="off">
+            <input type="text" name="nom" placeholder="Nom" autocomplete="off">
+            <input type="text" name="email" placeholder="Email" autocomplete="off">
+            <input type="password" name="password" placeholder="Mot de passe" />
+            <input type="password" name="Cpassword" placeholder="Confirmez le mot de passe" />
+            <button type="submit" name="inscription">Creer un compte</button>
+            <p class="message">Vous avez déjà un compte ? <br><a class="aa" href="connexion.php">Connectez vous</a></p>
+        </form>
+
     </main>
     <?php require('footer_spe.php'); ?>
 </body>
