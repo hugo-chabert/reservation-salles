@@ -1,7 +1,19 @@
+html,
+body,
+main {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
 .profil {
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding-top: 1rem;
     padding-bottom: 1rem;
     background-image: linear-gradient(to bottom right, var(--Background2-), var(--Background-));
@@ -13,18 +25,22 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 1rem;
+    width: 31.25rem;
     background-color: var(--Background2-);
     color: var(--White-);
     padding-top: 1rem;
     padding-bottom: 1rem;
     box-shadow: 0 2px 8px var(--White-);
-    border-radius: 5%;
+    border-radius: 1.25rem;
 }
 
 .profil input {
     margin: 0.2rem;
+    width: 70%;
+    height: 30px;
     background-color: var(--Background3-);
     border: none;
+    font-family: Texte;
     color: var(--White-);
 }
 
@@ -56,4 +72,8 @@
 
 .profil button:focus {
     outline: none;
+}
+
+section h2 {
+    text-align: center;
 }

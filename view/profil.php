@@ -58,6 +58,8 @@ if (!Securite::estConnecte()) {
     <link rel="stylesheet" href="../public/css/footer.css">
     <link rel="stylesheet" href="../public/css/profil.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <title>Profil</title>
 </head>
@@ -70,9 +72,9 @@ if (!Securite::estConnecte()) {
 
                 <?php require_once(__DIR__ . '/gestion_erreur.php'); ?>
 
-                <h2>Mon profil : </h2>
+                <h2 data-aos="zoom-in-down" data-aos-duration="2000" data-aos-anchor-placement="top-center">Mon profil : </h2>
 
-                <form action="profil.php" method="post">
+                <form action="profil.php" method="post" data-aos="zoom-out-up" data-aos-duration="2000" data-aos-anchor-placement="center">
                     <label for="login"> Login </label>
                     <input type="text" name="login" value="<?= $objet_user_info['login'] ?>" autocomplete="off">
                     <label for="prenom"> Prenom </label>
@@ -84,7 +86,7 @@ if (!Securite::estConnecte()) {
 
                     <button type="submit" name="submit">Modifier profil</button>
                 </form>
-                <form action="profil.php" method="post">
+                <form action="profil.php" method="post" data-aos="zoom-out-up" data-aos-duration="2500" data-aos-anchor-placement="center">
                     <input type="password" name="password_ancien" value="" autocomplete="off" placeholder="Ancien mot de passe">
                     <input type="password" name="password_nouveau" value="" autocomplete="off" placeholder="Nouveau mot de passe">
                     <input type="password" name="password_confirmation" value="" autocomplete="off" placeholder="Confirmation mot de passe">
@@ -98,5 +100,7 @@ if (!Securite::estConnecte()) {
     </main>
     <?php require('footer.php'); ?>
 </body>
-
+<script>
+    AOS.init();
+</script>
 </html>
