@@ -58,7 +58,7 @@ if (Securite::estConnecte()) {
         </div>
 
     </main>
-    <?php require('footer.php'); ?>
+    <?php require('footer_spe.php'); ?>
 </body>
 
 </html>

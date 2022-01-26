@@ -5,22 +5,22 @@
                 <section class="category">
                     <h2 data-aos="fade-right" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000">Catégories</h2>
                     <ul>
-                        <li data-aos="fade-right" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1200"> <a href="index.php"> Accueil </a></li>
-                        <li data-aos="fade-right" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1400"> <a href="./view/planning.php"> Planning </a></li>
+                        <li data-aos="fade-right" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1200"> <a href="../index.php"> Accueil </a></li>
+                        <li data-aos="fade-right" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1400"> <a href="./planning.php"> Planning </a></li>
                     </ul>
                 </section>
                 <section class="link">
                     <h2 data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000">Liens</h2>
                     <ul>
-                        <li data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1400"> <a href="./view/reservation-form.php"> Reserver une salle </a></li>
+                        <li data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1400"> <a href="./reservation-form.php"> Reserver une salle </a></li>
                         <?php
                         if (!isset($_SESSION['user'])) { ?>
 
-                            <li data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1400"> <a href="./view/connexion.php"> Connexion </a></li>
-                            <li data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1600"> <a href="./view/inscription.php"> Inscription </a></li>
+                            <li data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1400"> <a href="./connexion.php"> Connexion </a></li>
+                            <li data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1600"> <a href="./inscription.php"> Inscription </a></li>
                         <?php }
                         ?>
-                        <li data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1600"> <a href="./view/profil.php"> Profil </a></li>
+                        <li data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1600"> <a href="./profil.php"> Profil </a></li>
                     </ul>
                 </section>
             </div>

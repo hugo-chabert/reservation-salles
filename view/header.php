@@ -17,12 +17,14 @@ if (isset($_POST['deconnexion'])) {
                 <li data-aos="zoom-in" data-aos-duration="1600"> <a href="./index.php">Home</a> </li>
                 <li data-aos="zoom-in" data-aos-duration="1700"> <a href="./view/planning.php">Planning</a> </li>
                 <?php if (isset($_SESSION['user'])) { ?>
-                    <li data-aos="zoom-in" data-aos-duration="1800"> <a href="./view/reservation-form.php">Reservations</a> </li>;
-                    <li data-aos="zoom-in" data-aos-duration="1900"> <a href="./view/profil.php">Profil</a> </li>
-                    <?php if (isset($_SESSION['user']['id_droits'])) { ?>
-                    <li data-aos="zoom-in" data-aos-duration="2000"> <a href="./view/admin.php">Admin</a> </li>
-                    <?php } ?>
-                    <li data-aos="zoom-in" data-aos-duration="2100"> <a href="./view/deconnexion.php">Deconnexion</a> </li>
+                <li data-aos="zoom-in" data-aos-duration="1800"> <a href="./view/reservation-form.php">Reservations</a> </li>;
+                <li data-aos="zoom-in" data-aos-duration="1900"> <a href="./view/profil.php">Profil</a> </li>
+            </ul>
+            <ul class="ul-menu-spe">
+                <?php if (isset($_SESSION['user']['id_droits'])) { ?>
+                <li data-aos="zoom-in" data-aos-duration="2000"> <a href="./view/admin.php">Admin</a> </li>
+                <?php } ?>
+                <li data-aos="zoom-in" data-aos-duration="2100"> <a href="./view/deconnexion.php">Deconnexion</a> </li>
                 <?php  } ?>
             </ul>
             <?php

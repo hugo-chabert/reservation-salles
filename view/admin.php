@@ -99,7 +99,7 @@ $resultat_all_user = $_SESSION['objet_utilisateur']->info_all_user();
             </form>
         </div>
     </main>
-    <?php require('footer.php'); ?>
+    <?php require('footer_spe.php'); ?>
     <script>
         AOS.init();
     </script>

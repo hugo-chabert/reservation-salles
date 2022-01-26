@@ -55,7 +55,7 @@ $datetimeEndHour = date_format($datetimeEnd, 'G');
         <p class="horaires"><?php echo $datetimeStartDay.' de '.$datetimeStartHour.'h à '.$datetimeEndHour.'h';?></p>
         <p><?php echo $resultat['description']?></p>
     </main>
-    <?php require('footer.php'); ?>
+    <?php require('footer_spe.php'); ?>
 </body>
 
 </html>

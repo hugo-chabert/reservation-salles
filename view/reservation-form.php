@@ -90,7 +90,7 @@ if (!Securite::estConnecte()) {
             </form>
         </div>
     </main>
-    <?php require('footer.php'); ?>
+    <?php require('footer_spe.php'); ?>
 </body>
 <script>
     AOS.init();

@@ -42,6 +42,8 @@ main form input{
     padding: 0.5rem;
     margin-top: 1.875rem;
     background-color: var(--Background3-);
+    color: var(--White-);
+    font-family: Texte;
 }
 .table-form-1,
 .table-form-2{
