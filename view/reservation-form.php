@@ -23,7 +23,7 @@ if(isset($_POST['reserver'])){
             $datetimeEnd->add(new DateInterval('P0Y0M0DT1H0M0S'));
             $datetime = $datetime->format('Y-m-d H:i');
             $datetimeEnd = $datetimeEnd->format('Y-m-d H:i');
-            $_SESSION['objet_reservation']->create($_POST['title'], $_POST['desc'], $datetime, $datetimeEnd);
+            $_SESSION['objet_reservation']->create($_POST['title'], $_POST['desc'], $datetime, $datetimeEnd, $_POST['categorie']);
         }
     }
     else{
@@ -66,6 +66,12 @@ if (!Securite::estConnecte()) {
                 <p>Reservez une salle dès maintenant &#128197; </p>
                 <input class="input-form" type="text" name="title" placeholder="Titre" />
                 <input class="input-form" type="text" name="desc" placeholder="Description" />
+                <select class="input-form" name="categorie" size="1">
+                    <option value="1">Sport
+                    <option value="2">Détente
+                    <option value="3">Travail
+                    <option value="4">Évènement
+                </select>
                 <input class="input-form" type="date" name="datetime" />
                 <select class="input-form" name="horaires" size="1">
                     <option value="8">8h - 9h

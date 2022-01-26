@@ -12,11 +12,11 @@ class ReservationClass
         $this->Reservation_model = new Reservation_model();
     }
 
-    public function create($title, $desc, $datetime, $datetimeEnd)
+    public function create($title, $desc, $datetime, $datetimeEnd, $categorie)
     {
 
         if ($this->Reservation_model->sql_check_horaire($datetime) == false) {
-            $this->Reservation_model->sql_create($title, $desc, $datetime, $datetimeEnd, $this->id_user);
+            $this->Reservation_model->sql_create($title, $desc, $datetime, $datetimeEnd, $this->id_user, $categorie);
             Toolbox::ajouterMessageAlerte("Votre horaire est reservée !", Toolbox::COULEUR_VERTE);
             header('Location: ./planning.php');
             exit();

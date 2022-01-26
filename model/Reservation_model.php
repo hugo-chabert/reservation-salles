@@ -3,16 +3,17 @@
 class Reservation_model
 {
 
-    public function sql_create($title, $desc, $datetime, $datetimeEnd, $id)
+    public function sql_create($title, $desc, $datetime, $datetimeEnd, $id, $categorie)
     {
-        $req = "INSERT INTO reservations (titre, description, debut, fin, fk_id_utilisateur) VALUES (:titre, :description, :debut, :fin, :fk_id_utilisateur)";
+        $req = "INSERT INTO reservations (titre, description, debut, fin, fk_id_utilisateur, fk_id_categorie) VALUES (:titre, :description, :debut, :fin, :fk_id_utilisateur, :fk_id_categorie)";
         $stmt = Database::connect_db()->prepare($req);
         $stmt->execute(array(
             ":titre" => $title,
             ":description" => $desc,
             ":debut" => $datetime,
             ":fin" => $datetimeEnd,
-            ":fk_id_utilisateur" => $id
+            ":fk_id_utilisateur" => $id,
+            ":fk_id_categorie" => $categorie
         ));
         $estModifier = ($stmt->rowCount() > 0);
         $stmt->closeCursor();
