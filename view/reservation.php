@@ -1,5 +1,6 @@
 <?php
 require '../vendor/autoload.php';
+
 use Database\Database;
 use Controller\Securite;
 use Controller\ReservationClass;
@@ -13,10 +14,9 @@ if (!Securite::estConnecte()) {
     header('Location:./connexion.php');
 }
 
-if(isset($_GET['id']) && !empty($_GET['id'])){
+if (isset($_GET['id']) && !empty($_GET['id'])) {
     $currentPage = (int) strip_tags($_GET['id']);
-}
-else{
+} else {
     header('Location: ./planning.php');
 }
 
@@ -47,17 +47,20 @@ $datetimeEndHour = date_format($datetimeEnd, 'G');
 <body>
     <?php require('header_spe.php'); ?>
     <main>
-        <h1><?php echo $resultat['titre'] ?></h1>
-        <p>Catégorie : <?php $req = "SELECT * FROM categories WHERE id_categorie = :id";
-                                $stmt = Database::connect_db()->prepare($req);
-                                $stmt->execute(array(
-                                    ":id" => $resultat['fk_id_categorie']
-                                ));
-                            foreach($stmt as $categorie){
+        <section class="reservation">
+            <h1><?php echo $resultat['titre'] ?></h1>
+            <p>Catégorie : <?php $req = "SELECT * FROM categories WHERE id_categorie = :id";
+                            $stmt = Database::connect_db()->prepare($req);
+                            $stmt->execute(array(
+                                ":id" => $resultat['fk_id_categorie']
+                            ));
+                            foreach ($stmt as $categorie) {
                                 echo $categorie['nom'];
-                            }?></p>
-        <p class="horaires"><?php echo $datetimeStartDay.' de '.$datetimeStartHour.'h à '.$datetimeEndHour.'h';?></p>
-        <p><?php echo $resultat['description']?></p>
+                            } ?></p>
+            <p class="horaires"><?php echo $datetimeStartDay . ' de ' . $datetimeStartHour . 'h à ' . $datetimeEndHour . 'h'; ?></p>
+            <p>Tache : <?php echo $resultat['description'] ?></p>
+        </section>
+
     </main>
     <?php require('footer_spe.php'); ?>
 </body>

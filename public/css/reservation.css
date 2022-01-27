@@ -1,6 +1,8 @@
 @import url(root.css);
 @import url(font.css);
-html, body, main {
+html,
+body,
+main {
   width: 100%;
   height: 100%;
   margin: 0;
@@ -10,16 +12,26 @@ html, body, main {
 
 main {
   background-color: var(--Background3-);
+  display: flex;
+  justify-content: center;
+  align-items: start;
 }
 
-body h1 {
+.reservation {
+  background-color: var(--BackgroundTable2-);
+  width: 60%;
+  margin-top: 4rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  color: var(--White-);
+  font-weight: bold;
+}
+.reservation h1 {
   color: var(--White-);
   text-align: center;
   font-family: Texte;
-  font-weight: bold;
 }
-
-body p {
+.reservation p {
   color: var(--White-);
   display: flex;
   width: 90%;
@@ -28,12 +40,10 @@ body p {
   font-family: Texte;
   font-size: 1rem;
 }
-
-.horaires {
+.reservation .horaires {
   font-size: 0.75rem;
   color: var(--Black-);
   font-family: Texte;
-  font-weight: bold;
 }
 
 /*# sourceMappingURL=reservation.css.map */
