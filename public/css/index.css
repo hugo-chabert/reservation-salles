@@ -30,7 +30,6 @@ body {
   filter: blur(1.5px);
   transition: all 0.5s ease-in-out;
 }
-
 .section_modal .index_overlay {
   background-color: var(--DarkShadow-);
   width: 100%;
@@ -38,11 +37,9 @@ body {
   position: absolute;
   transition: background-color 0.8s ease;
 }
-
 .section_modal .index_content {
   z-index: 2;
 }
-
 .section_modal .index_content h1 {
   font-size: clamp(1rem, 2vw, 3rem);
 }
@@ -77,13 +74,11 @@ body {
   flex-direction: column;
   margin: 9.375rem;
 }
-
 .section-txt h2 {
   text-align: center;
   font-size: clamp(1rem, 2vw, 3rem);
   color: var(--White-);
 }
-
 .section-txt p {
   text-align: justify;
   font-size: clamp(1rem, 2vw, 1.5rem);
@@ -94,8 +89,7 @@ body {
   transition: all 0.2s ease-in-out;
   color: var(--White-);
 }
-
-.section-txt a:hover {
+.section-txt a a:hover {
   color: var(--Hover-);
 }
 

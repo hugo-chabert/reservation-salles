@@ -1,4 +1,5 @@
-html, body{
+html,
+body {
     width: 100%;
     height: 100%;
     margin: 0;
@@ -15,30 +16,32 @@ main {
     padding-bottom: 2rem;
     height: 100%;
     font-size: clamp(1rem, 2vw, 1.25rem);
-    background-image: linear-gradient(to bottom right, var(--Background2-), var(--Background-));
+    background-image: linear-gradient( to bottom right, var(--Background2-), var(--Background-));
 }
 
-form{
+form {
     display: flex;
     flex-direction: column;
 }
 
-form, table {
+form,
+table {
     padding-top: 1rem;
     padding-bottom: 1rem;
     color: var(--White-);
     letter-spacing: 2px;
 }
 
-table th, td {
+table th,
+td {
     padding: 0.2rem;
     text-align: center;
     border-bottom: solid;
-    border-bottom-width: .025rem;
+    border-bottom-width: 0.025rem;
     font-family: Texte;
 }
 
-main form input{
+form input {
     border: none;
     border-radius: 3%;
     padding: 0.5rem;
@@ -48,11 +51,12 @@ main form input{
     font-family: Texte;
 }
 
-.table-form-1, .table-form-2{
+.table-form-1,
+.table-form-2 {
     margin: 6.25rem;
 }
 
-main form button {
+form button {
     letter-spacing: 2px;
     width: auto;
     padding-left: 0.9375rem;
@@ -67,18 +71,18 @@ main form button {
     border-radius: 0.25rem;
     box-shadow: inset 0px 3px 5px rgba(255, 255, 255, 0.5), 0px 0px 10px rgba(0, 0, 0, 0.15);
     background: rgb(2, 0, 36);
-    background: linear-gradient(45deg, rgba(2, 0, 36, 0) 5%, rgba(255, 255, 255, .5) 6%, rgba(255, 255, 255, 0) 9%, rgba(255, 255, 255, .5) 10%, rgba(255, 255, 255, 0) 17%, rgba(255, 255, 255, .5) 19%, rgba(255, 255, 255, 0) 21%);
+    background: linear-gradient( 45deg, rgba(2, 0, 36, 0) 5%, rgba(255, 255, 255, 0.5) 6%, rgba(255, 255, 255, 0) 9%, rgba(255, 255, 255, 0.5) 10%, rgba(255, 255, 255, 0) 17%, rgba(255, 255, 255, 0.5) 19%, rgba(255, 255, 255, 0) 21%);
     background-size: 150%;
     background-position: right;
     transition: 1s;
 }
 
-main form button:hover {
+form button:hover {
     background-position: left;
     color: white;
     box-shadow: inset 0px 3px 5px rgba(255, 255, 255, 1), 0px 0px 10px rgba(0, 0, 0, 0.25);
 }
 
-main form button:focus {
+form button:focus {
     outline: none;
 }
