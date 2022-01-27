@@ -8,7 +8,7 @@ main {
   scroll-behavior: smooth;
 }
 
-section {
+.section_profil {
   height: 100%;
   display: flex;
   flex-direction: column;

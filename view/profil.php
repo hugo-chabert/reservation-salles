@@ -69,7 +69,7 @@ if (!Securite::estConnecte()) {
     <?php require('header_spe.php'); ?>
     <main>
 
-        <section>
+        <section class="section_profil">
             <?php require_once(__DIR__ . '/gestion_erreur.php'); ?>
             <h2 data-aos="zoom-in-down" data-aos-duration="2000" data-aos-anchor-placement="top-center">Mon profil : </h2>
             <form action="profil.php" method="post" data-aos="zoom-out-up" data-aos-duration="2000" data-aos-anchor-placement="center">
