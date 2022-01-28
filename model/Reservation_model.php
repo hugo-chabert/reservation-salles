@@ -2,7 +2,7 @@
 namespace Model;
 
 use PDO;
-use Database\Database;
+use database\Database;
 
 class Reservation_model
 {

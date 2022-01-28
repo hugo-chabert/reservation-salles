@@ -3,9 +3,9 @@
     "description": "Projet permettant de réserver des créneaux de salle",
     "autoload": {
         "psr-4": {
-            "Controller\\": "controller/",
-            "Database\\": "database/",
-            "Model\\": "model/"
+            "controller\\": "controller/",
+            "database\\": "database/",
+            "model\\": "model/"
         }
     },
     "require": {}

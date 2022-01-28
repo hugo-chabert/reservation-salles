@@ -1,8 +1,8 @@
 <?php
 require '../vendor/autoload.php';
 
-use Controller\Toolbox;
-use Controller\Securite;
+use controller\Toolbox;
+use controller\Securite;
 
 session_start();
 

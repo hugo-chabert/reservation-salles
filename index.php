@@ -1,8 +1,8 @@
 <?php
 
 require 'vendor/autoload.php';
-use Controller\User;
-use Controller\ReservationClass;
+use controller\User;
+use controller\ReservationClass;
 session_start();
 
 

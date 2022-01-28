@@ -2,9 +2,9 @@
 namespace Model;
 
 use PDO;
-use Database\Database;
-use Controller\Toolbox;
-use Controller\Securite;
+use database\Database;
+use controller\Toolbox;
+use controller\Securite;
 
 class Register
 {

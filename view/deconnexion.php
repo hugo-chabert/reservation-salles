@@ -1,6 +1,6 @@
 <?php
 require '../vendor/autoload.php';
-use Controller\Securite;
+use controller\Securite;
 
 session_start();
 

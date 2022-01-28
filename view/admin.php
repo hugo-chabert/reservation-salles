@@ -1,7 +1,7 @@
 <?php
 require '../vendor/autoload.php';
-use Controller\User;
-use Controller\ReservationClass;
+use controller\User;
+use controller\ReservationClass;
 
 
 // require_once(__DIR__ . '/../controller/Securite.php');

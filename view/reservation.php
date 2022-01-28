@@ -1,9 +1,9 @@
 <?php
 require '../vendor/autoload.php';
 
-use Database\Database;
-use Controller\Securite;
-use Controller\ReservationClass;
+use database\Database;
+use controller\Securite;
+use controller\ReservationClass;
 // require_once(__DIR__ . '/../database/database.php');
 // require_once(__DIR__ . '/../controller/Securite.php');
 // require_once(__DIR__ . '/../controller/Toolbox.php');

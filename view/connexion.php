@@ -2,9 +2,9 @@
 require '../vendor/autoload.php';
 session_start();
 
-use Model\Register;
-use Controller\Toolbox;
-use Controller\Securite;
+use model\Register;
+use controller\Toolbox;
+use controller\Securite;
 
 // require_once(__DIR__ . '/../model/Register_Login_model.php');
 // require_once(__DIR__ . '/../controller/Toolbox.php');

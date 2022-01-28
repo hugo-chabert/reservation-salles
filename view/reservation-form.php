@@ -1,8 +1,8 @@
 <?php
 require '../vendor/autoload.php';
 
-use Controller\Toolbox;
-use Controller\Securite;
+use controller\Toolbox;
+use controller\Securite;
 
 // require_once(__DIR__ . '/../controller/Securite.php');
 // require_once(__DIR__ . '/../database/Database.php');
