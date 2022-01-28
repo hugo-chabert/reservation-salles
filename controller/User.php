@@ -1,11 +1,11 @@
 <?php
 
-namespace controller;
+namespace Controller;
 
-use model\User_model;
-use controller\Toolbox;
-use controller\Securite;
-use model\Register;
+use Model\User_model;
+use Controller\Toolbox;
+use Controller\Securite;
+use Model\Register;
 
 class User
 {

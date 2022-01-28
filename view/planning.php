@@ -1,7 +1,7 @@
 <?php
 require '../vendor/autoload.php';
 
-use controller\Planning;
+use Controller\Planning;
 
 // require_once(__DIR__ . '/../controller/Securite.php');
 // require_once(__DIR__ . '/../controller/User.php');

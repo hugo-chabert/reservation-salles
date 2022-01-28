@@ -1,5 +1,5 @@
 <?php
-namespace controller;
+namespace Controller;
 class Toolbox
 {
     public const COULEUR_ROUGE = "alert-danger";

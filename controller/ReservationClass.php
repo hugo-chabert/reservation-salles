@@ -1,9 +1,9 @@
 <?php
 
-namespace controller;
+namespace Controller;
 
-use controller\Toolbox;
-use model\Reservation_model;
+use Controller\Toolbox;
+use Model\Reservation_model;
 
 class ReservationClass
 {

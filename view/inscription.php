@@ -2,9 +2,9 @@
 require '../vendor/autoload.php';
 session_start();
 
-use model\Register;
-use controller\Toolbox;
-use controller\Securite;
+use Model\Register;
+use Controller\Toolbox;
+use Controller\Securite;
 
 
 if (isset($_POST['inscription'])) {

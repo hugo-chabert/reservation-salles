@@ -1,9 +1,9 @@
 <?php
 
-namespace controller;
+namespace Controller;
 
 use DateTime;
-use model\Planning_model;
+use Model\Planning_model;
 
 class Planning
 {
