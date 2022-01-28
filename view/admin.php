@@ -1,12 +1,19 @@
 <?php
-require_once(__DIR__ . '/../controller/Securite.php');
-require_once(__DIR__ . '/../controller/User.php');
-require_once(__DIR__ . '/../database/Database.php');
-require_once(__DIR__ . '/../controller/Toolbox.php');
-require_once(__DIR__ . '/../controller/ReservationClass.php');
-require_once(__DIR__ . '/../model/Reservation_model.php');
+require '../vendor/autoload.php';
+use Controller\User;
+use Controller\ReservationClass;
+
+
+// require_once(__DIR__ . '/../controller/Securite.php');
+// require_once(__DIR__ . '/../controller/User.php');
+// require_once(__DIR__ . '/../database/Database.php');
+// require_once(__DIR__ . '/../controller/Toolbox.php');
+// require_once(__DIR__ . '/../controller/ReservationClass.php');
+// require_once(__DIR__ . '/../model/Reservation_model.php');
 
 session_start();
+
+
 ob_start();
 
 if (isset($_POST['Delete_user'])) {

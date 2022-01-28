@@ -1,11 +1,14 @@
 <?php
+require '../vendor/autoload.php';
 
-require_once(__DIR__ . '/../controller/Securite.php');
-require_once(__DIR__ . '/../controller/User.php');
-require_once(__DIR__ . '/../database/Database.php');
-require_once(__DIR__ . '/../controller/Toolbox.php');
-require_once(__DIR__ . '/../controller/Planning.php');
-require_once(__DIR__ . '/../model/Planning_model.php');
+use Controller\Planning;
+
+// require_once(__DIR__ . '/../controller/Securite.php');
+// require_once(__DIR__ . '/../controller/User.php');
+// require_once(__DIR__ . '/../database/Database.php');
+// require_once(__DIR__ . '/../controller/Toolbox.php');
+// require_once(__DIR__ . '/../controller/Planning.php');
+// require_once(__DIR__ . '/../model/Planning_model.php');
 session_start();
 
 $planning = new Planning();
@@ -27,17 +30,17 @@ $planning = new Planning();
     <title>Planning</title>
 </head>
 
-    <body>
-        <?php require('header_spe.php'); ?>
+<body>
+    <?php require('header_spe.php'); ?>
     <main>
         <p data-aos="fade-up" data-aos-duration="1500">Semaine du Lundi :
-        <?php
+            <?php
             $planning->verification_semaine()
             ?>
         </p>
         <form action="" method="post" class="pagination">
-            <button class='button' type="submit" name="moins" data-aos="fade-right" data-aos-duration="2000">-</button>
-            <button class='button' type="submit" name="plus" data-aos="fade-left" data-aos-duration="2000">+</button>
+            <button type="submit" name="moins" data-aos="fade-right" data-aos-duration="2000">-</button>
+            <button type="submit" name="plus" data-aos="fade-left" data-aos-duration="2000">+</button>
         </form>
         <table>
             <thead>
@@ -62,4 +65,5 @@ $planning = new Planning();
 <script>
     AOS.init();
 </script>
+
 </html>

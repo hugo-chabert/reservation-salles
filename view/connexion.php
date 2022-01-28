@@ -1,10 +1,15 @@
 <?php
+require '../vendor/autoload.php';
 session_start();
 
-require_once(__DIR__ . '/../model/Register_Login_model.php');
-require_once(__DIR__ . '/../controller/Toolbox.php');
-require_once(__DIR__ . '/../controller/Securite.php');
-require_once(__DIR__ . '/../database/database.php');
+use Model\Register;
+use Controller\Toolbox;
+use Controller\Securite;
+
+// require_once(__DIR__ . '/../model/Register_Login_model.php');
+// require_once(__DIR__ . '/../controller/Toolbox.php');
+// require_once(__DIR__ . '/../controller/Securite.php');
+// require_once(__DIR__ . '/../database/database.php');
 
 if (isset($_POST['connexion'])) {
     if (!empty($_POST['email']) && !empty($_POST['password'])) {
@@ -35,16 +40,16 @@ if (Securite::estConnecte()) {
 <body>
     <?php require('header_spe.php'); ?>
     <main>
-        <div class="container_profil">
-            <form action="" method="post">
-                <?php require_once(__DIR__ . '/gestion_erreur.php'); ?>
-                <p>Connectez-vous</p>
-                <input class="input-form" type="text" name="email" placeholder="Email" autocomplete="off">
-                <input class="input-form" type="password" name="password" placeholder="Mot de passe" />
-                <button class='button' type="submit" name="connexion">Connexion</button>
-                <p class="message">Vous n'avez pas de compte? <br><a class="aa" href="inscription.php">Creez un compte</a></p>
-            </form>
-        </div>
+
+        <form action="" method="post">
+            <?php require_once(__DIR__ . '/gestion_erreur.php'); ?>
+            <p>Connectez-vous</p>
+            <input type="text" name="email" placeholder="Email" autocomplete="off">
+            <input type="password" name="password" placeholder="Mot de passe" />
+            <button type="submit" name="connexion">Connexion</button>
+            <p class="message">Vous n'avez pas de compte? <br><a class="aa" href="inscription.php">Creez un compte</a></p>
+        </form>
+
     </main>
     <?php require('footer_spe.php'); ?>
 </body>

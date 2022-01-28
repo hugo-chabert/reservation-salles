@@ -1,6 +1,7 @@
 <?php
-require_once(__DIR__ . '/../controller/User.php');
-require_once(__DIR__ . '/../controller/Securite.php');
+require '../vendor/autoload.php';
+use Controller\Securite;
+
 session_start();
 
 if (!Securite::estConnecte()) {

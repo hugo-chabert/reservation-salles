@@ -1,5 +1,9 @@
 <?php
-include_once(__DIR__ . "/../model/Planning_model.php");
+
+namespace Controller;
+
+use DateTime;
+use Model\Planning_model;
 
 class Planning
 {

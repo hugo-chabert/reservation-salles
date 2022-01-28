@@ -1,6 +1,9 @@
 <?php
-include_once(__DIR__ . "/../model/Reservation_model.php");
 
+namespace Controller;
+
+use Controller\Toolbox;
+use Model\Reservation_model;
 
 class ReservationClass
 {
